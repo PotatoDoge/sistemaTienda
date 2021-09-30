@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu1"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="OPCION 1"/>
+        <item
+            android:id="@+id/menu2"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="OPCION 2"/>
+        <item
+            android:id="@+id/menu3"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="OPCION3 3"/>
+
+        <item
+            android:id="@+id/menu4"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="OPCION3 4"/>
+        <item
+            android:id="@+id/menu5"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="OPCION3 5"/>
+    </group>
+
+</menu>
