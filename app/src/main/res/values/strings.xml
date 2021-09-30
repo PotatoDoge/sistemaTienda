@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">sistemaTienda</string>
+    <string name="iniciar_sesion">Iniciar Sesión</string>
 </resources>
