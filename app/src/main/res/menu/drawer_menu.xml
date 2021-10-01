@@ -4,24 +4,27 @@
         <item
             android:id="@+id/menu1"
             android:icon="@drawable/ic_launcher_foreground"
-            android:title="OPCION 1"/>
+            android:title="@string/producto"/>
         <item
             android:id="@+id/menu2"
             android:icon="@drawable/ic_launcher_foreground"
-            android:title="OPCION 2"/>
+            android:title="@string/inventario"/>
         <item
             android:id="@+id/menu3"
             android:icon="@drawable/ic_launcher_foreground"
-            android:title="OPCION3 3"/>
+            android:title="@string/venta"/>
 
         <item
             android:id="@+id/menu4"
             android:icon="@drawable/ic_launcher_foreground"
-            android:title="OPCION3 4"/>
+            android:title="@string/devolucion"/>
         <item
             android:id="@+id/menu5"
             android:icon="@drawable/ic_launcher_foreground"
-            android:title="OPCION3 5"/>
+            android:title="@string/ajustes"/>
+        <item
+            android:id="@+id/menu6"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="@string/cerrar_sesion"/>
     </group>
-
 </menu>

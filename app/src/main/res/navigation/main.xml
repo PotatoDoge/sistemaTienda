@@ -9,5 +9,5 @@
         android:id="@+id/menu1"
         android:name="com.example.sistematienda.prueba"
         android:label="Profile" />
-
+    
 </navigation>
