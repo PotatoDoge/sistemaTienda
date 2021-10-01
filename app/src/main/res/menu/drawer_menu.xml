@@ -4,26 +4,32 @@
         <item
             android:id="@+id/menu1"
             android:icon="@drawable/ic_launcher_foreground"
-            android:title="@string/producto"/>
+            android:title="@string/inicio"
+            />
         <item
             android:id="@+id/menu2"
             android:icon="@drawable/ic_launcher_foreground"
-            android:title="@string/inventario"/>
+            android:title="@string/producto"
+            />
         <item
             android:id="@+id/menu3"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="@string/inventario"/>
+        <item
+            android:id="@+id/menu4"
             android:icon="@drawable/ic_launcher_foreground"
             android:title="@string/venta"/>
 
         <item
-            android:id="@+id/menu4"
+            android:id="@+id/menu5"
             android:icon="@drawable/ic_launcher_foreground"
             android:title="@string/devolucion"/>
         <item
-            android:id="@+id/menu5"
+            android:id="@+id/menu6"
             android:icon="@drawable/ic_launcher_foreground"
             android:title="@string/ajustes"/>
         <item
-            android:id="@+id/menu6"
+            android:id="@+id/menu7"
             android:icon="@drawable/ic_launcher_foreground"
             android:title="@string/cerrar_sesion"/>
     </group>

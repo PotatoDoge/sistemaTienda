@@ -7,7 +7,38 @@
 
     <fragment
         android:id="@+id/menu1"
-        android:name="com.example.sistematienda.prueba"
-        android:label="Profile" />
-    
+        android:name="com.example.sistematienda.inicio"
+        android:label="Inicio"
+        tools:layout="@layout/fragment_inicio"/>
+
+    <fragment
+        android:id="@+id/menu2"
+        android:name="com.example.sistematienda.producto"
+        android:label="Producto"
+        tools:layout="@layout/fragment_producto"/>
+
+    <fragment
+        android:id="@+id/menu3"
+        android:name="com.example.sistematienda.inventario"
+        android:label="Producto"
+        tools:layout="@layout/fragment_inventario"/>
+
+    <fragment
+        android:id="@+id/menu4"
+        android:name="com.example.sistematienda.venta"
+        android:label="Venta"
+        tools:layout="@layout/fragment_venta"/>
+
+    <fragment
+        android:id="@+id/menu5"
+        android:name="com.example.sistematienda.devolucion"
+        android:label="Devolucion"
+        tools:layout="@layout/fragment_devolucion"/>
+
+    <fragment
+        android:id="@+id/menu6"
+        android:name="com.example.sistematienda.ajustes"
+        android:label="Ajustes"
+        tools:layout="@layout/fragment_ajustes"/>
+
 </navigation>
