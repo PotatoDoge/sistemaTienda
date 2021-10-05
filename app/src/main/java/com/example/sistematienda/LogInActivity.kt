@@ -16,6 +16,7 @@ class LogInActivity: AppCompatActivity() {
     var edtUsuario: EditText? = null
     var edtPassword:EditText? = null
 
+    // arreglar responsividad en esta ventana
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
