@@ -15,4 +15,5 @@
     <string name="ajustes">Ajustes</string>
     <string name="cerrar_sesion">Cerrar Sesión</string>
     <string name="inicio">Inicio</string>
+    <string name="salir">Salir</string>
 </resources>

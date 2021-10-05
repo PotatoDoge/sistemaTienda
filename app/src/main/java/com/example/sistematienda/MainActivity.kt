@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         logIn.setOnClickListener{
             val intent = Intent(this, LogInActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 }

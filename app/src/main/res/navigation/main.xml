@@ -41,4 +41,10 @@
         android:label="Ajustes"
         tools:layout="@layout/fragment_ajustes"/>
 
+    <fragment
+        android:id="@+id/menu7"
+        android:name="com.example.sistematienda.cerrarSesion"
+        android:label="Cerrar_Sesion"
+        tools:layout="@layout/fragment_cerrar_sesion"/>
+
 </navigation>

@@ -25,6 +25,9 @@ class LogInActivity: AppCompatActivity() {
 
         btnLogin.setOnClickListener{
             validarUsuario("http://charlyffs.mywire.org:9000/validar_usuario.php")
+            val intent = Intent(this,PrincipalActivity::class.java)
+            startActivity(intent)
+            finish() // evita que el usuario regrese a la página de log in directamente
         }
     }
 
@@ -37,7 +40,7 @@ class LogInActivity: AppCompatActivity() {
             Method.POST, URL, com.android.volley.Response.Listener { response ->
                 // lo que responde
                 if(response.isNotEmpty()){
-                    //Toast.makeText(this,response.toString(), Toast.LENGTH_LONG).show()descomentar para mostrar la respuesta del server
+                    //Toast.makeText(this,response.toString(), Toast.LENGTH_LONG).show() descomentar para mostrar la respuesta del server
                     edtUsuario?.setText("")
                     edtPassword?.setText("")
                     val intent = Intent(this,PrincipalActivity::class.java)
