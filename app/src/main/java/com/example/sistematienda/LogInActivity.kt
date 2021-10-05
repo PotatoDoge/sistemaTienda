@@ -22,12 +22,20 @@ class LogInActivity: AppCompatActivity() {
         edtUsuario = findViewById(R.id.edtUsuario)
         edtPassword = findViewById(R.id.edtPassword)
         val btnLogin = findViewById<Button>(R.id.enter_button)
+        val btnReg = findViewById<Button>(R.id.regresar_button)
 
         btnLogin.setOnClickListener{
             validarUsuario("http://charlyffs.mywire.org:9000/validar_usuario.php")
-            val intent = Intent(this,PrincipalActivity::class.java)
-            startActivity(intent)
+            //val intent = Intent(this,PrincipalActivity::class.java)
+            //startActivity(intent)
             finish() // evita que el usuario regrese a la página de log in directamente
+        }
+
+        btnReg.setOnClickListener{
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+            finish()
+            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right)
         }
     }
 

@@ -9,9 +9,9 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="272dp"
-        android:layout_height="226dp"
-        android:layout_marginTop="-100dp"
+        android:layout_width="170dp"
+        android:layout_height="133dp"
+        android:layout_marginTop="100dp"
         app:srcCompat="@drawable/placeholder" />
 
     <EditText
@@ -48,5 +48,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="@string/entrar" />
+
+    <Button
+        android:id="@+id/regresar_button"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/regresar" />
 
 </LinearLayout>

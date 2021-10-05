@@ -16,4 +16,5 @@
     <string name="cerrar_sesion">Cerrar Sesión</string>
     <string name="inicio">Inicio</string>
     <string name="salir">Salir</string>
+    <string name="regresar">regresar</string>
 </resources>

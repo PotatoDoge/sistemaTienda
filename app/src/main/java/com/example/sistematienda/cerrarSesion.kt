@@ -38,6 +38,7 @@ class cerrarSesion : Fragment() {
             val intent = Intent(context,MainActivity::class.java)
             startActivity(intent)
             activity?.finish()
+            activity?.overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right)
         }
         return view
     }
