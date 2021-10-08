@@ -10,9 +10,9 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="147dp"
-        android:layout_height="152dp"
-        app:srcCompat="@drawable/icon_user" />
+        android:layout_width="262dp"
+        android:layout_height="221dp"
+        app:srcCompat="@drawable/logo" />
 
     <Button
         android:id="@+id/logIn_button"
