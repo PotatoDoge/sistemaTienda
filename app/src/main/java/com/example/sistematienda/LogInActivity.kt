@@ -29,7 +29,7 @@ class LogInActivity: AppCompatActivity() {
             validarUsuario("http://charlyffs.mywire.org:9000/validar_usuario.php")
             //val intent = Intent(this,PrincipalActivity::class.java)
             //startActivity(intent)
-            finish() // evita que el usuario regrese a la página de log in directamente
+            //finish()
         }
 
         btnReg.setOnClickListener{
@@ -54,6 +54,7 @@ class LogInActivity: AppCompatActivity() {
                     edtPassword?.setText("")
                     val intent = Intent(this,PrincipalActivity::class.java)
                     startActivity(intent)
+                    finish()
                 }
                 else{
                     Toast.makeText(this,"Usuario o contraseña incorrectas", Toast.LENGTH_LONG).show()
