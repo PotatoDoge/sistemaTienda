@@ -50,8 +50,6 @@ class LogInActivity: AppCompatActivity() {
                 // lo que responde
                 if(response.isNotEmpty()){
                     //Toast.makeText(this,response.toString(), Toast.LENGTH_LONG).show() descomentar para mostrar la respuesta del server
-                    edtUsuario?.setText("")
-                    edtPassword?.setText("")
                     val intent = Intent(this,PrincipalActivity::class.java)
                     startActivity(intent)
                     finish()
