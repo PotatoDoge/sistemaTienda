@@ -29,6 +29,9 @@
         <activity android:name=".PrincipalActivity"
             android:screenOrientation="fullSensor"
             tools:ignore="LockedOrientationActivity"/>
+        <activity android:name=".ProductsActivty"
+            android:screenOrientation="fullSensor"
+            tools:ignore="LockedOrientationActivity"/>
     </application>
 
 </manifest>

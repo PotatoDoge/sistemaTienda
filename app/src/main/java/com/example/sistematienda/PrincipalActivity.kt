@@ -16,7 +16,7 @@ import androidx.navigation.ui.NavigationUI
 import com.google.android.material.navigation.NavigationView
 
 
-open class PrincipalActivity : AppCompatActivity(),
+class PrincipalActivity : AppCompatActivity(),
     NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var drawerLayout: DrawerLayout
@@ -28,17 +28,19 @@ open class PrincipalActivity : AppCompatActivity(),
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(findViewById(R.id.toolbar))
 
+        // related to the navigation drawer
         drawerLayout = findViewById(R.id.drawer_layout)
         toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         drawerLayout.addDrawerListener(toggle)
-
         val nav = findViewById<NavigationView>(R.id.navigation_view)
         nav.setNavigationItemSelectedListener(this)
         nav.menu.getItem(0).isChecked = true
         toggle.syncState()
     }
 
-    // Method that manages when the menu is opened or closed
+    /**
+     * Method that manages if the nav drawer is opened or closed
+     */
     override fun onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START)
@@ -47,24 +49,29 @@ open class PrincipalActivity : AppCompatActivity(),
         }
     }
 
+    /**
+     * Method that manages what happens when you click an item menu in the nav drawer
+     */
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.menu1 -> Toast.makeText(this, "ITEM 1", Toast.LENGTH_SHORT).show()
-            R.id.menu2 -> Toast.makeText(this, "ITEM 2", Toast.LENGTH_SHORT).show()
+            R.id.inicio -> Toast.makeText(this, "INICIO", Toast.LENGTH_SHORT).show()
+            R.id.menu2 -> showProductsActions()
             R.id.menu3 -> Toast.makeText(this, "ITEM 3", Toast.LENGTH_SHORT).show()
             R.id.menu4 -> Toast.makeText(this, "ITEM 4", Toast.LENGTH_SHORT).show()
             R.id.menu5 -> Toast.makeText(this, "ITEM 5", Toast.LENGTH_SHORT).show()
             R.id.menu6 -> Toast.makeText(this, "ITEM 6", Toast.LENGTH_SHORT).show()
-            R.id.menu7 -> signOut() // cerrar sesión
+            R.id.exit -> signOut() // cerrar sesión
         }
-        drawerLayout.closeDrawer(GravityCompat.START)
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START)
+        }
         return true
     }
 
     /**
      * Método que muestra la alerta de cerrar sesión
      */
-    fun signOut(){
+    private fun signOut(){
         val dialogBuilder = AlertDialog.Builder(this)
         dialogBuilder.setMessage("¿Quiere cerrar sesión?")
             // if the dialog is cancelable
@@ -84,5 +91,14 @@ open class PrincipalActivity : AppCompatActivity(),
         val alert = dialogBuilder.create()
         alert.setTitle("Cerrar Sesión")
         alert.show()
+    }
+
+    /**
+     * Method that takes you to the product's activity
+     */
+    private fun showProductsActions(){
+        val intent = Intent(this, ProductsActivty::class.java)
+        startActivity(intent)
+        drawerLayout.closeDrawer(GravityCompat.START)
     }
 }
