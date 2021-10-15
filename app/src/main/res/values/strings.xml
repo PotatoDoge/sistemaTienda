@@ -17,4 +17,9 @@
     <string name="inicio">Inicio</string>
     <string name="salir">Salir</string>
     <string name="regresar">regresar</string>
+    <string name="agregar_producto">Agregar</string>
+    <string name="return_description">Returns to previous screen</string>
+    <string name="clave_del_producto">Clave del producto</string>
+    <string name="nombre_del_producto">Nombre del producto</string>
+    <string name="descripcion_del_producto">Descripcion del producto</string>
 </resources>

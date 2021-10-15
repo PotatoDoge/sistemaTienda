@@ -4,15 +4,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:gravity="center"
     android:orientation="vertical"
     android:background="@color/pale_blue">
+
+    <ImageButton
+        android:id="@+id/regresarProducto"
+        android:layout_height="40dp"
+        android:layout_width="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/returnicon"
+        android:contentDescription="@string/return_description" />
 
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
-        android:padding="30dp"
+        android:padding="10dp"
         android:rowCount="2"
         android:columnCount="2">
         <androidx.cardview.widget.CardView
@@ -119,36 +127,6 @@
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/regresarProducto"
-            app:cardCornerRadius="15dp"
-            android:layout_width="0dp"
-            android:layout_margin="10dp"
-            app:cardElevation="4dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1">
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginStart="20dp"
-                    android:src="@drawable/returnicon" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="10dp"
-                    android:textSize="18sp"
-                    android:textAlignment="center"
-                    android:text="Regresar">
-                </TextView>
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:visibility="invisible"
