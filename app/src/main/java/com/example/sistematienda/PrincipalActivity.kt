@@ -97,8 +97,8 @@ class PrincipalActivity : AppCompatActivity(),
      * Method that takes you to the product's activity
      */
     private fun showProductsActions(){
+        drawerLayout.closeDrawer(GravityCompat.START)
         val intent = Intent(this, ProductsActivty::class.java)
         startActivity(intent)
-        drawerLayout.closeDrawer(GravityCompat.START)
     }
 }

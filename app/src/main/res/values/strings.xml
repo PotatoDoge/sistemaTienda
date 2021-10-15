@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">sistemaTienda</string>
+    <string name="app_name">Sistema de Tienda</string>
     <string name="iniciar_sesion">Iniciar Sesión</string>
     <string name="password">Password</string>
     <string name="entrar">Entrar</string>

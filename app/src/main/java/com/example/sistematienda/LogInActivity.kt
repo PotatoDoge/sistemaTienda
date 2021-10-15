@@ -26,10 +26,10 @@ class LogInActivity: AppCompatActivity() {
         val btnReg = findViewById<Button>(R.id.regresar_button)
 
         btnLogin.setOnClickListener{
-            validarUsuario("http://charlyffs.mywire.org:9000/validar_usuario.php")
-            //val intent = Intent(this,PrincipalActivity::class.java)
-            //startActivity(intent)
-            //finish()
+            //validarUsuario("http://charlyffs.mywire.org:9000/validar_usuario.php")
+            val intent = Intent(this,PrincipalActivity::class.java)
+            startActivity(intent)
+            finish()
         }
 
         btnReg.setOnClickListener{

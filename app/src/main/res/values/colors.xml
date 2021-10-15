@@ -12,4 +12,8 @@
     <color name="cold_gray">#DFEFF0</color>
     <color name="dark_blue">#295E6A</color>
     <color name="marine_blue">#295E6A</color>
+    <color name="pale_blue">#d1edf2</color>
+    <color name="gray">#C7B2AD</color>
+
+
 </resources>
