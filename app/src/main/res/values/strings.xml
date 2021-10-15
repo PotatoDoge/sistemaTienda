@@ -22,4 +22,8 @@
     <string name="clave_del_producto">Clave del producto</string>
     <string name="nombre_del_producto">Nombre del producto</string>
     <string name="descripcion_del_producto">Descripcion del producto</string>
+    <string name="nuevo_producto">Nuevo Producto</string>
+    <string name="editar_producto">Editar Producto</string>
+    <string name="borrar_producto">Borrar Producto</string>
+    <string name="mostrar_productos">Mostrar productos</string>
 </resources>

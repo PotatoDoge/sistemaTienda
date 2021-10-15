@@ -51,7 +51,7 @@
                     android:layout_marginStart="10dp"
                     android:textSize="18sp"
                     android:textAlignment="center"
-                    android:text="Nuevo Producto">
+                    android:text="@string/nuevo_producto">
 
                 </TextView>
             </RelativeLayout>
@@ -86,7 +86,7 @@
                     android:layout_marginStart="10dp"
                     android:textSize="18sp"
                     android:textAlignment="center"
-                    android:text="Editar Producto">
+                    android:text="@string/editar_producto">
 
                 </TextView>
             </RelativeLayout>
@@ -121,7 +121,7 @@
                     android:layout_marginStart="10dp"
                     android:textSize="18sp"
                     android:textAlignment="center"
-                    android:text="Borrar Producto">
+                    android:text="@string/borrar_producto">
 
                 </TextView>
             </RelativeLayout>
@@ -129,7 +129,7 @@
 
 
         <androidx.cardview.widget.CardView
-            android:visibility="invisible"
+            android:id="@+id/mostrarProducto"
             app:cardCornerRadius="15dp"
 
             android:layout_width="0dp"
@@ -143,10 +143,23 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:layout_width="175dp"
-                    android:layout_height="175dp"
-                    android:src="@drawable/icon_user"
-                    tools:ignore="ContentDescription" />
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/show_items" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:text="@string/mostrar_productos">
+
+                </TextView>
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
