@@ -7,12 +7,12 @@
             android:title="@string/inicio"
             />
         <item
-            android:id="@+id/menu2"
+            android:id="@+id/producto"
             android:icon="@drawable/ic_launcher_foreground"
             android:title="@string/producto"
             />
         <item
-            android:id="@+id/menu3"
+            android:id="@+id/inventario"
             android:icon="@drawable/ic_launcher_foreground"
             android:title="@string/inventario"/>
         <item

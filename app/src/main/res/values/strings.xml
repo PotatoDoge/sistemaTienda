@@ -24,4 +24,9 @@
     <string name="editar_producto">Editar Producto</string>
     <string name="borrar_producto">Borrar Producto</string>
     <string name="mostrar_productos">Mostrar productos</string>
+    <string name="registrar_producto">Registrar Producto</string>
+    <string name="quitar_producto">Quitar Producto</string>
+    <string name="deshabilitar_producto">Deshabilitar Producto</string>
+    <string name="mostrar_inventario">Mostrar Inventario</string>
+    <string name="modificar_existencias">Modificar Existencias</string>
 </resources>

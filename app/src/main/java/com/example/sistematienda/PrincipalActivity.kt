@@ -55,8 +55,8 @@ class PrincipalActivity : AppCompatActivity(),
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.inicio -> Toast.makeText(this, "INICIO", Toast.LENGTH_SHORT).show()
-            R.id.menu2 -> showProductsActions()
-            R.id.menu3 -> Toast.makeText(this, "ITEM 3", Toast.LENGTH_SHORT).show()
+            R.id.producto -> showProductsActions()
+            R.id.inventario -> showInventoryAction()
             R.id.menu4 -> Toast.makeText(this, "ITEM 4", Toast.LENGTH_SHORT).show()
             R.id.menu5 -> Toast.makeText(this, "ITEM 5", Toast.LENGTH_SHORT).show()
             R.id.menu6 -> Toast.makeText(this, "ITEM 6", Toast.LENGTH_SHORT).show()
@@ -99,6 +99,12 @@ class PrincipalActivity : AppCompatActivity(),
     private fun showProductsActions(){
         drawerLayout.closeDrawer(GravityCompat.START)
         val intent = Intent(this, ProductsActivty::class.java)
+        startActivity(intent)
+    }
+
+    private fun showInventoryAction(){
+        drawerLayout.closeDrawer(GravityCompat.START)
+        val intent = Intent(this, InventoryActivity::class.java)
         startActivity(intent)
     }
 }

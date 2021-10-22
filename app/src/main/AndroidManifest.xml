@@ -37,12 +37,14 @@
             android:name=".ProductsActivty"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
-
         <activity
             android:name=".AddProduct"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
-
+        <activity
+            android:name=".InventoryActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
     </application>
 
 </manifest>
