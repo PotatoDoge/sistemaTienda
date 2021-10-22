@@ -11,8 +11,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.navigation.Navigation
-import androidx.navigation.ui.NavigationUI
 import com.google.android.material.navigation.NavigationView
 
 
@@ -59,7 +57,7 @@ class PrincipalActivity : AppCompatActivity(),
             R.id.inventario -> showInventoryAction()
             R.id.ventas  -> showVentasActions()
             R.id.devolucion -> showDevolucionActions()
-            R.id.menu6 -> Toast.makeText(this, "ITEM 6", Toast.LENGTH_SHORT).show()
+            R.id.ajustes -> showSettingsActions()
             R.id.exit -> signOut() // cerrar sesión
         }
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -117,6 +115,12 @@ class PrincipalActivity : AppCompatActivity(),
     private fun showDevolucionActions(){
         drawerLayout.closeDrawer(GravityCompat.START)
         val intent = Intent(this, ReturnsActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun showSettingsActions(){
+        drawerLayout.closeDrawer(GravityCompat.START)
+        val intent = Intent(this, SettingsActivity::class.java)
         startActivity(intent)
     }
 }

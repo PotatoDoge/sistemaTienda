@@ -34,4 +34,7 @@
     <string name="registrar_devolucion">Registrar Devolución</string>
     <string name="ver_devoluciones">Ver Devoluciones</string>
     <string name="ajustar_inventario">Ajustar Inventario</string>
+    <string name="agregar_usuario">Agregar Usuario</string>
+    <string name="editar_usuario">Editar Usuario</string>
+    <string name="borrar_usuario">Borrar Usuario</string>
 </resources>

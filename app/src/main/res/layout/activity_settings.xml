@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/pale_blue">
+
+    <ImageButton
+        android:id="@+id/regresarAjustes"
+        android:layout_height="40dp"
+        android:layout_width="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/returnicon"
+        android:contentDescription="@string/return_description" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:padding="10dp"
+        android:rowCount="2"
+        android:columnCount="2">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/agregarUsuario"
+            app:cardCornerRadius="15dp"
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            app:cardElevation="4dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/agregar_usuario"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:text="@string/agregar_usuario">
+
+                </TextView>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/editarUsuario"
+            app:cardCornerRadius="15dp"
+
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            app:cardElevation="4dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/editar_usuario" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:text="@string/editar_usuario">
+
+                </TextView>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/borrarUsuario"
+            app:cardCornerRadius="15dp"
+
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            app:cardElevation="4dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/borrar_usuario" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:text="@string/borrar_usuario">
+
+                </TextView>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:visibility="invisible"
+            android:id="@+id/mostrarProducto"
+            app:cardCornerRadius="15dp"
+
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            app:cardElevation="4dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/show_items" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:text="@string/mostrar_productos">
+
+                </TextView>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:visibility="invisible"
+            app:cardCornerRadius="15dp"
+
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            app:cardElevation="4dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="175dp"
+                    android:layout_height="175dp"
+                    android:src="@drawable/icon_user"
+                    tools:ignore="ContentDescription" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="15dp"
+
+            android:visibility="invisible"
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            app:cardElevation="4dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="175dp"
+                    android:layout_height="175dp"
+                    android:src="@drawable/icon_user"
+                    tools:ignore="ContentDescription" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="15dp"
+
+            android:visibility="invisible"
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            app:cardElevation="4dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="175dp"
+                    android:layout_height="175dp"
+                    android:src="@drawable/icon_user"
+                    tools:ignore="ContentDescription" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:visibility="invisible"
+            app:cardCornerRadius="15dp"
+
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            app:cardElevation="4dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="175dp"
+                    android:layout_height="175dp"
+                    android:src="@drawable/icon_user"
+                    tools:ignore="ContentDescription" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="15dp"
+
+            android:visibility="invisible"
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            app:cardElevation="4dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="175dp"
+                    android:layout_height="175dp"
+                    android:src="@drawable/icon_user"
+                    tools:ignore="ContentDescription" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </GridLayout>
+
+</LinearLayout>

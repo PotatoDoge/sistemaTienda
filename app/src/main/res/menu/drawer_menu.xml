@@ -25,7 +25,7 @@
             android:icon="@drawable/ic_launcher_foreground"
             android:title="@string/devolucion"/>
         <item
-            android:id="@+id/menu6"
+            android:id="@+id/ajustes"
             android:icon="@drawable/ic_launcher_foreground"
             android:title="@string/ajustes"/>
         <item
