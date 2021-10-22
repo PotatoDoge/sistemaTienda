@@ -57,8 +57,8 @@ class PrincipalActivity : AppCompatActivity(),
             R.id.inicio -> Toast.makeText(this, "INICIO", Toast.LENGTH_SHORT).show()
             R.id.producto -> showProductsActions()
             R.id.inventario -> showInventoryAction()
-            R.id.menu4 -> Toast.makeText(this, "ITEM 4", Toast.LENGTH_SHORT).show()
-            R.id.menu5 -> Toast.makeText(this, "ITEM 5", Toast.LENGTH_SHORT).show()
+            R.id.ventas  -> showVentasActions()
+            R.id.devolucion -> showDevolucionActions()
             R.id.menu6 -> Toast.makeText(this, "ITEM 6", Toast.LENGTH_SHORT).show()
             R.id.exit -> signOut() // cerrar sesión
         }
@@ -105,6 +105,18 @@ class PrincipalActivity : AppCompatActivity(),
     private fun showInventoryAction(){
         drawerLayout.closeDrawer(GravityCompat.START)
         val intent = Intent(this, InventoryActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun showVentasActions(){
+        drawerLayout.closeDrawer(GravityCompat.START)
+        val intent = Intent(this, SalesActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun showDevolucionActions(){
+        drawerLayout.closeDrawer(GravityCompat.START)
+        val intent = Intent(this, ReturnsActivity::class.java)
         startActivity(intent)
     }
 }

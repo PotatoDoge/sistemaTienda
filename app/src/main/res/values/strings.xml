@@ -29,4 +29,9 @@
     <string name="deshabilitar_producto">Deshabilitar Producto</string>
     <string name="mostrar_inventario">Mostrar Inventario</string>
     <string name="modificar_existencias">Modificar Existencias</string>
+    <string name="ver_ventas">Ver Ventas</string>
+    <string name="registrar_venta">Registrar Venta</string>
+    <string name="registrar_devolucion">Registrar Devolución</string>
+    <string name="ver_devoluciones">Ver Devoluciones</string>
+    <string name="ajustar_inventario">Ajustar Inventario</string>
 </resources>

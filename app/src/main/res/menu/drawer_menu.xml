@@ -16,12 +16,12 @@
             android:icon="@drawable/ic_launcher_foreground"
             android:title="@string/inventario"/>
         <item
-            android:id="@+id/menu4"
+            android:id="@+id/ventas"
             android:icon="@drawable/ic_launcher_foreground"
             android:title="@string/venta"/>
 
         <item
-            android:id="@+id/menu5"
+            android:id="@+id/devolucion"
             android:icon="@drawable/ic_launcher_foreground"
             android:title="@string/devolucion"/>
         <item
