@@ -22,3 +22,4 @@ class SalesActivity : AppCompatActivity() {
         moveTaskToBack(false)
     }
 }
+

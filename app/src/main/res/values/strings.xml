@@ -37,4 +37,5 @@
     <string name="agregar_usuario">Agregar Usuario</string>
     <string name="editar_usuario">Editar Usuario</string>
     <string name="borrar_usuario">Borrar Usuario</string>
+    <string name="logo">logo</string>
 </resources>
