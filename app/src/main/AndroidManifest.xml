@@ -15,7 +15,9 @@
         android:theme="@style/Theme.SistemaTienda"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
-
+        <activity
+            android:name=".DeleteProduct"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -57,7 +59,7 @@
         <activity
             android:name=".EditProduct"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".SettingsActivity"
             android:screenOrientation="portrait"

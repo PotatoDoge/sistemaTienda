@@ -40,6 +40,11 @@ class ProductsActivty : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+        delProd.setOnClickListener{
+            val intent = Intent(this, DeleteProduct::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     // Method that manages when the menu is opened or closed
