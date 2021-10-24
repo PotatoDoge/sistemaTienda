@@ -29,16 +29,6 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigation_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        app:headerLayout="@layout/layout_navigation_header"
-        app:menu="@menu/drawer_menu"
-        />
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -51,4 +41,13 @@
             android:contentDescription="@string/logo" />
     </RelativeLayout>
 
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/layout_navigation_header"
+        app:menu="@menu/drawer_menu"
+        />
 </androidx.drawerlayout.widget.DrawerLayout>

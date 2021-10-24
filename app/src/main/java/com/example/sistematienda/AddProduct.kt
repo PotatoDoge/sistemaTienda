@@ -18,13 +18,13 @@ class AddProduct : AppCompatActivity() {
 
     private var registered: Boolean = false
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_product)
 
         // Elementos
         val returnButton = findViewById<ImageButton>(R.id.returnAdd)
+        val emptyFields = findViewById<ImageButton>(R.id.eraseFields)
         val agregarProd = findViewById<Button>(R.id.agregarProducto)
         val nuevoProd = findViewById<EditText>(R.id.addClaveProducto)
         val nuevaDescProd = findViewById<EditText>(R.id.addDescripcionProducto)
@@ -37,6 +37,13 @@ class AddProduct : AppCompatActivity() {
             startActivity(intent)
             finish()
             this.overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right)
+        }
+
+        emptyFields.setOnClickListener{
+            nuevoProd.text.clear()
+            nuevaDescProd.text.clear()
+            nuevoNombrProd.text.clear()
+            Toast.makeText(this, "Campos vaciados", Toast.LENGTH_SHORT).show()
         }
 
         agregarProd.setOnClickListener {
@@ -104,7 +111,6 @@ class AddProduct : AppCompatActivity() {
                 }
                 else{
                     registerProductInDatabase(id,name,dsc,"http://charlyffs.mywire.org:9000/agregar_producto.php")
-                    //registerProductInDatabase("B","B","B","http://charlyffs.mywire.org:9000/agregar_producto.php")
                     Toast.makeText(this,"Producto registrado correctamente", Toast.LENGTH_SHORT).show()
                     registered = true
                 }

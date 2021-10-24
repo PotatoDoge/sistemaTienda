@@ -23,7 +23,7 @@
     <string name="nuevo_producto">Nuevo Producto</string>
     <string name="editar_producto">Editar Producto</string>
     <string name="borrar_producto">Borrar Producto</string>
-    <string name="mostrar_productos">Mostrar productos</string>
+    <string name="mostrar_productos">Mostrar Productos</string>
     <string name="registrar_producto">Registrar Producto</string>
     <string name="quitar_producto">Quitar Producto</string>
     <string name="deshabilitar_producto">Deshabilitar Producto</string>
@@ -38,4 +38,5 @@
     <string name="editar_usuario">Editar Usuario</string>
     <string name="borrar_usuario">Borrar Usuario</string>
     <string name="logo">logo</string>
+    <string name="borrar_campos">Borrar Campos</string>
 </resources>
