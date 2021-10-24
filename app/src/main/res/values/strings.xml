@@ -39,4 +39,6 @@
     <string name="borrar_usuario">Borrar Usuario</string>
     <string name="logo">logo</string>
     <string name="borrar_campos">Borrar Campos</string>
+    <string name="buscar">Buscar</string>
+    <string name="actualizar">Actualizar</string>
 </resources>

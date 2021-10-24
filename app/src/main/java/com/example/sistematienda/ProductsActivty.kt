@@ -34,6 +34,12 @@ class ProductsActivty : AppCompatActivity() {
             startActivity(intent)
             finish() // ver si ponerle finish o matarla desde la siguiiente ventana
         }
+
+        editProd.setOnClickListener{
+            val intent = Intent(this, EditProduct::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     // Method that manages when the menu is opened or closed
