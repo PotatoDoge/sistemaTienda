@@ -16,9 +16,10 @@ class ProductsActivty : AppCompatActivity() {
 
         // definir cardviews
         val returnBtn= findViewById<ImageButton>(R.id.regresarProducto)
-        val addProd = findViewById<CardView>(R.id.nuevoProducto);
-        val delProd = findViewById<CardView>(R.id.borrarProducto);
-        val editProd = findViewById<CardView>(R.id.editarProducto);
+        val addProd = findViewById<CardView>(R.id.nuevoProducto)
+        val delProd = findViewById<CardView>(R.id.borrarProducto)
+        val editProd = findViewById<CardView>(R.id.editarProducto)
+        val showProd = findViewById<CardView>(R.id.mostrarProducto)
 
         // definir funcionalidad de cardviews
         returnBtn.setOnClickListener{
@@ -26,7 +27,6 @@ class ProductsActivty : AppCompatActivity() {
             startActivity(intent)
             finish()
             this.overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right)
-
         }
 
         addProd.setOnClickListener{
@@ -42,6 +42,12 @@ class ProductsActivty : AppCompatActivity() {
         }
         delProd.setOnClickListener{
             val intent = Intent(this, DeleteProduct::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        showProd.setOnClickListener{
+            val intent = Intent(this, ShowProduct::class.java)
             startActivity(intent)
             finish()
         }

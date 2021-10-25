@@ -17,6 +17,9 @@ import com.android.volley.toolbox.Volley
 class AddProduct : AppCompatActivity() {
 
     private var registered: Boolean = false
+    private lateinit var nuevoProd: EditText
+    private lateinit var nuevaDescProd: EditText
+    private lateinit var nuevoNombrProd: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,9 +29,10 @@ class AddProduct : AppCompatActivity() {
         val returnButton = findViewById<ImageButton>(R.id.returnAdd)
         val emptyFields = findViewById<ImageButton>(R.id.eraseFields)
         val agregarProd = findViewById<Button>(R.id.agregarProducto)
-        val nuevoProd = findViewById<EditText>(R.id.addClaveProducto)
-        val nuevaDescProd = findViewById<EditText>(R.id.addDescripcionProducto)
-        val nuevoNombrProd = findViewById<EditText>(R.id.addNombreProducto)
+
+        nuevoProd = findViewById(R.id.addClaveProducto)
+        nuevaDescProd = findViewById(R.id.addDescripcionProducto)
+        nuevoNombrProd = findViewById(R.id.addNombreProducto)
 
 
         // Listeners
@@ -52,12 +56,6 @@ class AddProduct : AppCompatActivity() {
                 val name = nuevoNombrProd.text.toString()
                 val desc = nuevaDescProd.text.toString()
                 checkAvailability(id, name,desc,"http://charlyffs.mywire.org:9000/checar_disponibilidad.php")
-            }
-            if(registered){
-                nuevoProd.text.clear()
-                nuevaDescProd.text.clear()
-                nuevoNombrProd.text.clear()
-                registered = false
             }
         }
     }
@@ -107,12 +105,14 @@ class AddProduct : AppCompatActivity() {
                 // lo que responde
                 if(response.isNotEmpty()){
                     // encontró articulo con el mismo nombre
-                    throwAlert("Ya existe","Ya existe un prodcuto registrado con esa clave. Intente con otra de favor.")
+                    throwAlert("Ya existe","Ya existe un producto registrado con esa clave. Intente con otra de favor.")
                 }
                 else{
                     registerProductInDatabase(id,name,dsc,"http://charlyffs.mywire.org:9000/agregar_producto.php")
                     Toast.makeText(this,"Producto registrado correctamente", Toast.LENGTH_SHORT).show()
-                    registered = true
+                    nuevoProd.text.clear()
+                    nuevaDescProd.text.clear()
+                    nuevoNombrProd.text.clear()
                 }
             },
             {

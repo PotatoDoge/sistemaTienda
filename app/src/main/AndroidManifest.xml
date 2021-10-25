@@ -16,9 +16,6 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
         <activity
-            android:name=".DeleteProduct"
-            android:exported="true" />
-        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="fullSensor">
@@ -64,6 +61,16 @@
             android:name=".SettingsActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".ShowProduct"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity
+            android:name=".DeleteProduct"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
     </application>
 
 </manifest>
