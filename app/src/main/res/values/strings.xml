@@ -42,4 +42,7 @@
     <string name="buscar">Buscar</string>
     <string name="actualizar">Actualizar</string>
     <string name="borrar">Borrar</string>
+    <string name="id">ID</string>
+    <string name="nombre">Nombre</string>
+    <string name="descripcion">Descripción</string>
 </resources>

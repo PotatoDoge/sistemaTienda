@@ -16,8 +16,7 @@
             android:background="@color/white"
             android:padding="10dp"
             android:textAlignment="center"
-            android:textSize="20sp"
-            android:text="PRUEBA ID"/>
+            android:textSize="20sp" />
         <TextView
             android:id="@+id/nombrePrd"
             android:layout_width="120dp"
@@ -25,8 +24,7 @@
             android:padding="10dp"
             android:textSize="20sp"
             android:textAlignment="center"
-            android:background="@color/white"
-            android:text="PRUEBA nombr"/>
+            android:background="@color/white" />
         <TextView
             android:id="@+id/descPrd"
             android:layout_width="130dp"
@@ -34,6 +32,5 @@
             android:padding="10dp"
             android:textSize="20sp"
             android:textAlignment="center"
-            android:background="@color/white"
-            android:text="PRUEBA desc"/>
+            android:background="@color/white" />
     </TableRow>

@@ -13,6 +13,7 @@ import com.android.volley.AuthFailureError
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import org.json.JSONArray
 import org.json.JSONObject
 import org.w3c.dom.Text
 
@@ -66,16 +67,16 @@ class ShowProduct : AppCompatActivity() {
             Method.POST, URL, com.android.volley.Response.Listener { response ->
                 // lo que responde
                 if(response.isNotEmpty()){
-                    //val jsonObject = JSONObject(response)
-                    //val jsonArray = jsonObject.getJSONArray(null)
-                    for(i in 0..5){
+                    val jsonArray = JSONArray(response)
+                    for(i in 0 until jsonArray.length()){
+                        val obj = jsonArray.getJSONObject(i)
                         val newFila = LayoutInflater.from(this).inflate(R.layout.table_row_showproducts,null,false)
                         val id = newFila.findViewById<View>(R.id.idPrd) as TextView
                         val nmb = newFila.findViewById<View>(R.id.nombrePrd) as TextView
                         val dsc = newFila.findViewById<View>(R.id.descPrd) as TextView
-                        id.text = "$i" // cambiar por valor de id del jsonObject
-                        nmb.text = "$i"
-                        dsc.text = "$i"
+                        id.text = obj.getString("idProducto") // cambiar por valor de id del jsonObject
+                        nmb.text = obj.getString("nombre")
+                        dsc.text = obj.getString("descripcion")
                         table?.addView(newFila)
                     }
                 }
