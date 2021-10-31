@@ -67,17 +67,22 @@ class ShowProduct : AppCompatActivity() {
             Method.POST, URL, com.android.volley.Response.Listener { response ->
                 // lo que responde
                 if(response.isNotEmpty()){
-                    val jsonArray = JSONArray(response)
-                    for(i in 0 until jsonArray.length()){
-                        val obj = jsonArray.getJSONObject(i)
-                        val newFila = LayoutInflater.from(this).inflate(R.layout.table_row_showproducts,null,false)
-                        val id = newFila.findViewById<View>(R.id.idPrd) as TextView
-                        val nmb = newFila.findViewById<View>(R.id.nombrePrd) as TextView
-                        val dsc = newFila.findViewById<View>(R.id.descPrd) as TextView
-                        id.text = obj.getString("idProducto") // cambiar por valor de id del jsonObject
-                        nmb.text = obj.getString("nombre")
-                        dsc.text = obj.getString("descripcion")
-                        table?.addView(newFila)
+                    try {
+                        val jsonArray = JSONArray(response)
+                        for(i in 0 until jsonArray.length()){
+                            val obj = jsonArray.getJSONObject(i)
+                            val newFila = LayoutInflater.from(this).inflate(R.layout.table_row_showproducts,null,false)
+                            val id = newFila.findViewById<View>(R.id.idPrd) as TextView
+                            val nmb = newFila.findViewById<View>(R.id.nombrePrd) as TextView
+                            val dsc = newFila.findViewById<View>(R.id.descPrd) as TextView
+                            id.text = obj.getString("idProducto") // cambiar por valor de id del jsonObject
+                            nmb.text = obj.getString("nombre")
+                            dsc.text = obj.getString("descripcion")
+                            table?.addView(newFila)
+                        }
+                    }
+                    catch (e: Exception){
+                        throwAlert("Tabla vacía","No hay productos registrados en la base de datos.")
                     }
                 }
                 else{
