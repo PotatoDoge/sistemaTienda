@@ -45,4 +45,6 @@
     <string name="id">ID</string>
     <string name="nombre">Nombre</string>
     <string name="descripcion">Descripción</string>
+    <string name="nueva_categoria">Nueva Categoria</string>
+    <string name="agregar">Agregar</string>
 </resources>

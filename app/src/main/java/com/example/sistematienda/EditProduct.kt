@@ -14,10 +14,6 @@ import com.android.volley.RequestQueue
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import org.json.JSONObject
-
-
-
-
 class EditProduct : AppCompatActivity() {
     private lateinit var prod: EditText
     private lateinit var descProd: EditText
@@ -156,7 +152,6 @@ class EditProduct : AppCompatActivity() {
                     descProd.setText(jsonObject.getString("descripcion"))
                     nombrProd.setText(jsonObject.getString("nombre"))
                     prod.isEnabled = false
-
                 }
                 else{
                     // no encontró

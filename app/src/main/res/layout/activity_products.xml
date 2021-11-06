@@ -164,7 +164,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:visibility="invisible"
+            android:id="@+id/nuevaCategoria"
             app:cardCornerRadius="15dp"
 
             android:layout_width="0dp"
@@ -178,16 +178,64 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:layout_width="175dp"
-                    android:layout_height="175dp"
-                    android:src="@drawable/icon_user"
-                    tools:ignore="ContentDescription" />
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/show_items" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:text="@string/nueva_categoria">
+
+                </TextView>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/editarCategoria"
+            app:cardCornerRadius="15dp"
+
+            android:layout_width="0dp"
+            android:layout_margin="10dp"
+            app:cardElevation="4dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/show_items" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:text="Editar Categoría">
+
+                </TextView>
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
+            android:id="@+id/mostrarCategoría"
             app:cardCornerRadius="15dp"
 
-            android:visibility="invisible"
             android:layout_width="0dp"
             android:layout_margin="10dp"
             app:cardElevation="4dp"
@@ -199,31 +247,23 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:layout_width="175dp"
-                    android:layout_height="175dp"
-                    android:src="@drawable/icon_user"
-                    tools:ignore="ContentDescription" />
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            app:cardCornerRadius="15dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/show_items" />
 
-            android:visibility="invisible"
-            android:layout_width="0dp"
-            android:layout_margin="10dp"
-            app:cardElevation="4dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1">
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:text="Borrar Categoría">
 
-                <ImageView
-                    android:layout_width="175dp"
-                    android:layout_height="175dp"
-                    android:src="@drawable/icon_user"
-                    tools:ignore="ContentDescription" />
+                </TextView>
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
