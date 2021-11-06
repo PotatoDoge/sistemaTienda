@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/pale_blue"
     android:orientation="vertical"
-    tools:context=".AddProduct">
+    tools:context=".DeleteProduct">
 
     <LinearLayout
         android:layout_width="wrap_content"

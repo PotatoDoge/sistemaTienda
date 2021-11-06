@@ -233,7 +233,7 @@
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
-            android:id="@+id/mostrarCategoría"
+            android:id="@+id/deleteCategoria"
             app:cardCornerRadius="15dp"
 
             android:layout_width="0dp"
