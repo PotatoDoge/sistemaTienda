@@ -16,6 +16,12 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
         <activity
+            android:name=".DeleteCategory"
+            android:exported="true" />
+        <activity
+            android:name=".EditCategory"
+            android:exported="true" />
+        <activity
             android:name=".AddCategory"
             android:exported="true" />
         <activity

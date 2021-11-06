@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/pale_blue"
     android:orientation="vertical"
-    tools:context=".EditProduct">
+    tools:context=".EditCategory">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -43,28 +43,28 @@
             android:layout_height="match_parent">
 
             <EditText
-                android:id="@+id/addClaveProducto"
+                android:id="@+id/editClaveCategoria"
                 android:layout_width="200dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="50dp"
                 android:layout_centerHorizontal="true"
-                android:hint="@string/clave_del_producto" />
+                android:hint="@string/clave_de_la_cateogria" />
 
             <EditText
-                android:id="@+id/addNombreProducto"
+                android:id="@+id/editNombreCategoria"
                 android:layout_width="200dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="130dp"
                 android:layout_centerHorizontal="true"
-                android:hint="@string/nombre_del_producto"/>
+                android:hint="@string/nombre_de_la_categoria"/>
 
             <EditText
-                android:id="@+id/addDescripcionProducto"
+                android:id="@+id/editDescripcionCategoria"
                 android:layout_width="200dp"
                 android:layout_height="250dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="210dp"
-                android:hint="@string/descripcion_del_producto"
+                android:hint="@string/descripcion_de_la_categoria"
                 android:gravity="top"/>
 
             <LinearLayout
@@ -75,14 +75,14 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/buscarProducto"
+                    android:id="@+id/buscarCategoria"
                     android:layout_width="130dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:text="@string/buscar" />
 
                 <Button
-                    android:id="@+id/actualizarProducto"
+                    android:id="@+id/actualizarCategoria"
                     android:layout_width="130dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"

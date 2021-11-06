@@ -21,6 +21,7 @@ class ProductsActivty : AppCompatActivity() {
         val editProd = findViewById<CardView>(R.id.editarProducto)
         val showProd = findViewById<CardView>(R.id.mostrarProducto)
         val addCat = findViewById<CardView>(R.id.nuevaCategoria)
+        val editCat = findViewById<CardView>(R.id.editarCategoria)
 
         // definir funcionalidad de cardviews
         returnBtn.setOnClickListener{
@@ -55,6 +56,12 @@ class ProductsActivty : AppCompatActivity() {
 
         addCat.setOnClickListener{
             val intent = Intent(this, AddCategory::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        editCat.setOnClickListener{
+            val intent = Intent(this, EditCategory::class.java)
             startActivity(intent)
             finish()
         }

@@ -48,7 +48,7 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="50dp"
                 android:layout_centerHorizontal="true"
-                android:hint="Clave de la cateogría" />
+                android:hint="@string/clave_de_la_cateogria" />
 
             <EditText
                 android:id="@+id/addNombreCat"
@@ -56,7 +56,7 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="130dp"
                 android:layout_centerHorizontal="true"
-                android:hint="Nombre de la categoría"/>
+                android:hint="@string/nombre_de_la_categoria"/>
 
             <EditText
                 android:id="@+id/addDescripcionCategoria"
@@ -64,7 +64,7 @@
                 android:layout_height="250dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="210dp"
-                android:hint="Descripcion de la Categoría"
+                android:hint="@string/descripcion_de_la_categoria"
                 android:gravity="top"/>
 
             <Button

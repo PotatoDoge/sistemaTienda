@@ -47,4 +47,7 @@
     <string name="descripcion">Descripción</string>
     <string name="nueva_categoria">Nueva Categoria</string>
     <string name="agregar">Agregar</string>
+    <string name="clave_de_la_cateogria">Clave de la cateogría</string>
+    <string name="nombre_de_la_categoria">Nombre de la categoría</string>
+    <string name="descripcion_de_la_categoria">Descripcion de la Categoría</string>
 </resources>
