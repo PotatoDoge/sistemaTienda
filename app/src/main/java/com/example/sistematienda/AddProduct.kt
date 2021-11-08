@@ -4,15 +4,15 @@ import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageButton
-import android.widget.Toast
+import android.view.LayoutInflater
+import android.view.View
+import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import com.android.volley.AuthFailureError
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import org.json.JSONArray
 
 class AddProduct : AppCompatActivity() {
 
@@ -20,6 +20,12 @@ class AddProduct : AppCompatActivity() {
     private lateinit var nuevoProd: EditText
     private lateinit var nuevaDescProd: EditText
     private lateinit var nuevoNombrProd: EditText
+    private lateinit var catProd: Button
+    private var categorias = arrayOf<String>()
+    private var categoriasSeleccionadas = booleanArrayOf()
+    private var catSelec= ArrayList<Boolean>()
+    private var catList = ArrayList<String>()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +39,9 @@ class AddProduct : AppCompatActivity() {
         nuevoProd = findViewById(R.id.addClaveProducto)
         nuevaDescProd = findViewById(R.id.addDescripcionProducto)
         nuevoNombrProd = findViewById(R.id.addNombreProducto)
+        catProd = findViewById(R.id.addCat2Producto)
+        //fillSpiner() // método que llena el spinner con categorías llenadas de la base de datos
+        retrieveCategoryFromDatabase("http://charlyffs.mywire.org:9000/llenar_spinner_categorias.php")
 
 
         // Listeners
@@ -58,6 +67,11 @@ class AddProduct : AppCompatActivity() {
                 checkAvailability(id, name,desc,"http://charlyffs.mywire.org:9000/checar_disponibilidad.php")
             }
         }
+
+        catProd.setOnClickListener {
+            selectCategories()
+        }
+
     }
 
     /**
@@ -85,7 +99,7 @@ class AddProduct : AppCompatActivity() {
     }
 
     /**
-     * Methd that checks if fields are empty
+     * Method that checks if fields are empty
      */
     private fun checkIfFieldsEmpty(f1: EditText, f2:EditText, f3:EditText): Boolean{
         if(f1.text.isBlank() || f2.text.isBlank() || f3.text.isBlank()){
@@ -165,4 +179,94 @@ class AddProduct : AppCompatActivity() {
         // Add the request to the RequestQueue.
         rq.add(stringRequest)
     }
+
+    /**
+     * Method that fills category's spinner
+
+    private fun fillSpiner(){
+        categoriasSpinner.add("SA")
+        retrieveCategoryFromDatabase("http://charlyffs.mywire.org:9000/llenar_spinner_categorias.php")
+        val adapt = ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,categoriasSpinner)
+        catProd.adapter = adapt
+
+        // ver como poner un pop u  emnu con las que hay para ahí seleccionar todas con radio buttons
+    }
+     */
+
+    /**
+     * Method that retrieves categories' names from database so that the spinner can be filled and
+     * fills in the arrays that are displayed on the aleret
+     */
+    private fun retrieveCategoryFromDatabase(URL:String){
+
+        val rq: RequestQueue = Volley.newRequestQueue(this)
+        val stringRequest = object : StringRequest(
+            Method.POST, URL, com.android.volley.Response.Listener { response ->
+                // lo que responde
+                if(response.isNotEmpty()){
+                    try {
+                        val jsonArray = JSONArray(response)
+                        val prueba = Array<String>(jsonArray.length()){""}
+                        val prueba2 = BooleanArray(jsonArray.length()){false}
+                        for(i in 0 until jsonArray.length()){
+                            val obj = jsonArray.getJSONObject(i)
+                            prueba[i] = obj.getString("nombre")
+                            //catList.add(obj.getString("nombre"))
+                            //catSelec.add(false)
+                        }
+                        categorias = prueba
+                        categoriasSeleccionadas = prueba2
+                    }
+                    catch (e: Exception){
+                        throwAlert("Error",e.toString())
+                    }
+                }
+            },
+            {
+                // lo que pasa si hay error
+                Toast.makeText(this, it.toString(), Toast.LENGTH_LONG).show()
+            })
+        {
+            @Throws(AuthFailureError::class)
+            override fun getParams(): Map<String, String?> {
+                val parametros = HashMap<String,String>()
+                return parametros
+            }
+            @Throws(AuthFailureError::class)
+            override fun getHeaders(): Map<String, String> {
+                return HashMap()
+            }
+        }
+        // Add the request to the RequestQueue.
+        rq.add(stringRequest)
+
+    }
+
+    private fun selectCategories(){
+        // checar si dejar esto dentro o en el oncreate
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Categorías")
+        builder.setMultiChoiceItems(categorias, categoriasSeleccionadas) { dialog, which, isChecked ->
+            // Update the clicked item checked status
+            categoriasSeleccionadas[which] = isChecked
+
+            // Get the clicked item
+            val cat = categorias[which]
+        }
+
+        builder.setPositiveButton("OK") { _, _ ->
+            // Do something when click positive button
+            for (i in 0 until categorias.size) {
+                val checked = categoriasSeleccionadas[i]
+                // si es true, insertar en la base de datos de prod y cat
+                // mandar nombre a array para que cheque si está en db
+                // en otro método iterar para meter a la tabla entre producto y cat
+                //adaptar esto a editar producto
+            }
+        }
+
+        val alert = builder.create()
+        alert.show()
+    }
+
 }
