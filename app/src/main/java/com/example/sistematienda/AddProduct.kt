@@ -16,16 +16,12 @@ import org.json.JSONArray
 
 class AddProduct : AppCompatActivity() {
 
-    private var registered: Boolean = false
     private lateinit var nuevoProd: EditText
     private lateinit var nuevaDescProd: EditText
     private lateinit var nuevoNombrProd: EditText
     private lateinit var catProd: Button
     private var categorias = arrayOf<String>()
     private var categoriasSeleccionadas = booleanArrayOf()
-    private var catSelec= ArrayList<Boolean>()
-    private var catList = ArrayList<String>()
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,11 +56,14 @@ class AddProduct : AppCompatActivity() {
         }
 
         agregarProd.setOnClickListener {
-            if(checkIfFieldsEmpty(nuevoProd,nuevaDescProd,nuevoNombrProd)){
+            if(checkIfFieldsEmpty(nuevoProd,nuevaDescProd,nuevoNombrProd) && checkIfCategorySelected()){
                 val id = nuevoProd.text.toString()
                 val name = nuevoNombrProd.text.toString()
                 val desc = nuevaDescProd.text.toString()
                 checkAvailability(id, name,desc,"http://charlyffs.mywire.org:9000/checar_disponibilidad.php")
+            }
+            else{
+                throwAlert("Llenar campos", "Todos los campos tienen que estar llenos para seguir con el registro, y mínimo una categoría seleccionada")
             }
         }
 
@@ -79,6 +78,16 @@ class AddProduct : AppCompatActivity() {
      */
     override fun onBackPressed() {
         moveTaskToBack(false)
+    }
+
+    /**
+     * Method that checks if at least one category is selected
+     */
+    private fun checkIfCategorySelected():Boolean{
+        for(i in 0..categoriasSeleccionadas.size-1){
+            if(categoriasSeleccionadas[i] == true) return true
+        }
+        return false
     }
 
     /**
@@ -103,7 +112,6 @@ class AddProduct : AppCompatActivity() {
      */
     private fun checkIfFieldsEmpty(f1: EditText, f2:EditText, f3:EditText): Boolean{
         if(f1.text.isBlank() || f2.text.isBlank() || f3.text.isBlank()){
-            throwAlert("Llenar campos", "Todos los campos tienen que estar llenos para seguir con el registro")
             return false
         }
         return true
@@ -123,10 +131,17 @@ class AddProduct : AppCompatActivity() {
                 }
                 else{
                     registerProductInDatabase(id,name,dsc,"http://charlyffs.mywire.org:9000/agregar_producto.php")
+                    for(i in 0..categorias.size-1){
+                        if(categoriasSeleccionadas[i] == true){
+                            val nameCat = categorias[i]
+                            insertIntoProductToCategoryTable(id,nameCat,"http://charlyffs.mywire.org:9000/asignar_producto_categoria.php")
+                        }
+                    }
                     Toast.makeText(this,"Producto registrado correctamente", Toast.LENGTH_SHORT).show()
                     nuevoProd.text.clear()
                     nuevaDescProd.text.clear()
                     nuevoNombrProd.text.clear()
+                    categoriasSeleccionadas = BooleanArray(categoriasSeleccionadas.size){false}
                 }
             },
             {
@@ -181,19 +196,6 @@ class AddProduct : AppCompatActivity() {
     }
 
     /**
-     * Method that fills category's spinner
-
-    private fun fillSpiner(){
-        categoriasSpinner.add("SA")
-        retrieveCategoryFromDatabase("http://charlyffs.mywire.org:9000/llenar_spinner_categorias.php")
-        val adapt = ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,categoriasSpinner)
-        catProd.adapter = adapt
-
-        // ver como poner un pop u  emnu con las que hay para ahí seleccionar todas con radio buttons
-    }
-     */
-
-    /**
      * Method that retrieves categories' names from database so that the spinner can be filled and
      * fills in the arrays that are displayed on the aleret
      */
@@ -211,8 +213,6 @@ class AddProduct : AppCompatActivity() {
                         for(i in 0 until jsonArray.length()){
                             val obj = jsonArray.getJSONObject(i)
                             prueba[i] = obj.getString("nombre")
-                            //catList.add(obj.getString("nombre"))
-                            //catSelec.add(false)
                         }
                         categorias = prueba
                         categoriasSeleccionadas = prueba2
@@ -242,31 +242,52 @@ class AddProduct : AppCompatActivity() {
 
     }
 
+    /**
+     * Method that displays the alert with the available catgeories
+     */
     private fun selectCategories(){
-        // checar si dejar esto dentro o en el oncreate
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Categorías")
         builder.setMultiChoiceItems(categorias, categoriasSeleccionadas) { dialog, which, isChecked ->
             // Update the clicked item checked status
             categoriasSeleccionadas[which] = isChecked
-
-            // Get the clicked item
-            val cat = categorias[which]
         }
 
-        builder.setPositiveButton("OK") { _, _ ->
-            // Do something when click positive button
-            for (i in 0 until categorias.size) {
-                val checked = categoriasSeleccionadas[i]
-                // si es true, insertar en la base de datos de prod y cat
-                // mandar nombre a array para que cheque si está en db
-                // en otro método iterar para meter a la tabla entre producto y cat
-                //adaptar esto a editar producto
-            }
-        }
+        builder.setPositiveButton("Ok", DialogInterface.OnClickListener {
+                dialog, id -> dialog.dismiss()
+        })
 
         val alert = builder.create()
         alert.show()
+    }
+
+    /**
+     * Method that registers category id and product id in their in-between table
+     */
+    private fun insertIntoProductToCategoryTable(id:String, catName: String, URL: String){
+        val rq: RequestQueue = Volley.newRequestQueue(this)
+        val stringRequest = object : StringRequest(
+            Method.POST, URL, com.android.volley.Response.Listener { _ -> },
+            {
+                // lo que pasa si hay error
+                Toast.makeText(this, it.toString(), Toast.LENGTH_LONG).show()
+            })
+        {
+            @Throws(AuthFailureError::class)
+            override fun getParams(): Map<String, String?> {
+                val parametros = HashMap<String,String>()
+                parametros["idProd"] = id
+                parametros["nombreCat"] = catName
+                return parametros
+            }
+
+            @Throws(AuthFailureError::class)
+            override fun getHeaders(): Map<String, String> {
+                return HashMap()
+            }
+        }
+        // Add the request to the RequestQueue.
+        rq.add(stringRequest)
     }
 
 }
