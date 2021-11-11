@@ -36,7 +36,6 @@ class AddProduct : AppCompatActivity() {
         nuevaDescProd = findViewById(R.id.addDescripcionProducto)
         nuevoNombrProd = findViewById(R.id.addNombreProducto)
         catProd = findViewById(R.id.addCat2Producto)
-        //fillSpiner() // método que llena el spinner con categorías llenadas de la base de datos
         retrieveCategoryFromDatabase("http://charlyffs.mywire.org:9000/llenar_spinner_categorias.php")
 
 
@@ -196,7 +195,7 @@ class AddProduct : AppCompatActivity() {
     }
 
     /**
-     * Method that retrieves categories' names from database so that the spinner can be filled and
+     * Method that retrieves categories' names from database so that the list can be filled and
      * fills in the arrays that are displayed on the aleret
      */
     private fun retrieveCategoryFromDatabase(URL:String){
@@ -239,7 +238,6 @@ class AddProduct : AppCompatActivity() {
         }
         // Add the request to the RequestQueue.
         rq.add(stringRequest)
-
     }
 
     /**

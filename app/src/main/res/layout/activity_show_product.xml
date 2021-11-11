@@ -8,25 +8,38 @@
     android:background="@color/pale_blue"
     android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/returnShowProd"
-        android:layout_height="40dp"
-        android:layout_width="40dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/returnicon"
-        android:contentDescription="@string/return_description" />
-    <ScrollView
+
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="20dp">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/returnShowProd"
+            android:layout_height="40dp"
+            android:layout_width="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/returnicon"
+            android:contentDescription="@string/return_description" />
+
+        <Button
+            android:id="@+id/filtrarTablaProd"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/filtrar_por"/>
+
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center_horizontal">
         <TableLayout
-            android:id="@+id/productsTable"
+            android:id="@+id/topRow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -61,6 +74,25 @@
                     android:textAlignment="center"
                     android:background="@color/teal_200"/>
             </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+        <TableLayout
+            android:id="@+id/productsTable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:isScrollContainer="true"
+            tools:ignore="UselessParent">
         </TableLayout>
     </LinearLayout>
     </ScrollView>

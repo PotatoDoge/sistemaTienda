@@ -51,4 +51,5 @@
     <string name="nombre_de_la_categoria">Nombre de la categoría</string>
     <string name="descripcion_de_la_categoria">Descripcion de la Categoría</string>
     <string name="categoria">Categoría</string>
+    <string name="filtrar_por">Filtrar por</string>
 </resources>
