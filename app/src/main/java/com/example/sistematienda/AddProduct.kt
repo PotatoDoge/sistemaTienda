@@ -255,7 +255,7 @@ class AddProduct : AppCompatActivity() {
 
         builder.setPositiveButton("Ok", DialogInterface.OnClickListener {
                 dialog, id -> dialog.dismiss()
-        })
+        }).setCancelable(false)
 
         val alert = builder.create()
         alert.show()
