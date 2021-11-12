@@ -64,8 +64,8 @@
                 android:layout_height="150dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="210dp"
-                android:hint="@string/descripcion_del_producto"
-                android:gravity="top"/>
+                android:gravity="top"
+                android:hint="@string/descripcion_del_producto" />
 
             <Button
                 android:id="@+id/addCat2Producto"
@@ -73,8 +73,8 @@
                 android:layout_height="40dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="410dp"
-                android:text="@string/categoria"
-                android:gravity="top" />
+                android:gravity="top"
+                android:text="@string/categoria" />
 
             <Button
                 android:id="@+id/agregarProducto"

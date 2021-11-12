@@ -242,7 +242,7 @@ class AddProduct : AppCompatActivity() {
     }
 
     /**
-     * Method that displays the alert with the available catgeories
+     * Method that displays the alert with the available categories
      */
     private fun selectCategories(){
         val builder = AlertDialog.Builder(this)
