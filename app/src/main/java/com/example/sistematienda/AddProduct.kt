@@ -59,7 +59,7 @@ class AddProduct : AppCompatActivity() {
                 val id = nuevoProd.text.toString()
                 val name = nuevoNombrProd.text.toString()
                 val desc = nuevaDescProd.text.toString()
-                checkAvailability(id, name,desc,"http://charlyffs.mywire.org:9000/checar_disponibilidad.php")
+                checkAvailability(id, name,desc,"http://charlyffs.mywire.org:9000/checar_disponibilidad_prod.php")
             }
             else{
                 throwAlert("Llenar campos", "Todos los campos tienen que estar llenos para seguir con el registro, y mínimo una categoría seleccionada")
@@ -125,8 +125,8 @@ class AddProduct : AppCompatActivity() {
             Method.POST, URL, com.android.volley.Response.Listener { response ->
                 // lo que responde
                 if(response.isNotEmpty()){
-                    // encontró articulo con el mismo nombre
-                    throwAlert("Ya existe","Ya existe un producto registrado con esa clave. Intente con otra de favor.")
+                    // encontró articulo con el mismo nombre o clave
+                    throwAlert("Ya existe","Ya existe un producto registrado con esa clave o con ese nombre. Intente con otra de favor.")
                 }
                 else{
                     registerProductInDatabase(id,name,dsc,"http://charlyffs.mywire.org:9000/agregar_producto.php")
@@ -152,6 +152,7 @@ class AddProduct : AppCompatActivity() {
             override fun getParams(): Map<String, String?> {
                 val parametros = HashMap<String,String>()
                 parametros["idProd"] = id
+                parametros["prodName"] = name
                 return parametros
             }
 

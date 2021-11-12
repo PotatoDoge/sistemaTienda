@@ -97,7 +97,7 @@ class AddCategory : AppCompatActivity() {
                 // lo que responde
                 if(response.isNotEmpty()){
                     // encontró articulo con el mismo nombre
-                    throwAlert("Ya existe","Ya existe una categoría registrada con esa clave. Intente con otra de favor.")
+                    throwAlert("Ya existe","Ya existe una categoría registrada con esa clave o nombre. Intente con otra de favor.")
                 }
                 else{
                     registerCategoryInDatabase(id,name,dsc,"http://charlyffs.mywire.org:9000/agregar_categoria.php")
@@ -116,6 +116,7 @@ class AddCategory : AppCompatActivity() {
             override fun getParams(): Map<String, String?> {
                 val parametros = HashMap<String,String>()
                 parametros["idCat"] = id
+                parametros["catName"] = name
                 return parametros
             }
 
