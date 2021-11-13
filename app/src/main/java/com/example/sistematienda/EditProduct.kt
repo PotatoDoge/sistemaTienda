@@ -421,7 +421,7 @@ class EditProduct : AppCompatActivity() {
         }
         // Add the request to the RequestQueue.
         rq.add(stringRequest)
-        Toast.makeText(this, prod.text.toString(), Toast.LENGTH_LONG).show() // SI AGARRA BIEN EL prod.text ENTONCES QUE ES
+        Toast.makeText(this, prod.text.toString(), Toast.LENGTH_LONG).show()
     }
 
 }
