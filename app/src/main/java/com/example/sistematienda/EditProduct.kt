@@ -20,6 +20,9 @@ class EditProduct : AppCompatActivity() {
     private lateinit var descProd: EditText
     private lateinit var nombrProd: EditText
 
+    private var claveProducto: String = ""
+    private var nombreProducto: String = ""
+
     private var categorias = arrayOf<String>()
     private var categoriasRegistradasEnProducto = arrayOf<String>()
     private var categoriasSeleccionadas = booleanArrayOf()
@@ -62,8 +65,6 @@ class EditProduct : AppCompatActivity() {
         }
 
         updateProd.setOnClickListener {
-            // para las categorias, borrar los registros que haya en la tabla producto_cateogira de este id
-            // insertar nuevas relaciones producto_categoria con este id
             if(checkIfFieldsEmpty(prod,descProd,nombrProd) && checkIfCategorySelected()){
                 checkAvailability("http://charlyffs.mywire.org:9000/checar_disponibilidad_prod.php")
             }
@@ -157,8 +158,10 @@ class EditProduct : AppCompatActivity() {
                     // encontró articulo con esa clave
                     val jsonObject = JSONObject(response)
                     prod.setText(jsonObject.getString("idProducto"))
+                    claveProducto = jsonObject.getString("idProducto")
                     descProd.setText(jsonObject.getString("descripcion"))
                     nombrProd.setText(jsonObject.getString("nombre"))
+                    nombreProducto = jsonObject.getString("nombre")
                     prod.isEnabled = false
                     retrieveCategories("http://charlyffs.mywire.org:9000/llenar_categorias_activas.php", jsonObject.getString("idProducto"))
                 }
@@ -324,10 +327,8 @@ class EditProduct : AppCompatActivity() {
                     throwAlert("Ya existe","Ya existe un producto registrado con esa clave o con ese nombre. Intente con otra de favor.")
                 }
                 else{
-                    // los sig dos métodos no están funcionando
-                    updateProductInDatabase(prod.text.toString(),nombrProd.text.toString(),descProd.text.toString(),"http://charlyffs.mywire.org:9000/actualizar_producto.php")
                     emptyProductCategory("http://charlyffs.mywire.org:9000/borrar_registro_producto_categoria.php")
-                    // EL PROBLEMA ES QUE NO ESTÁ BORRANDO BIEN DE LA BD CON EL emptyProductCategory
+                    updateProductInDatabase(prod.text.toString(),nombrProd.text.toString(),descProd.text.toString(),"http://charlyffs.mywire.org:9000/actualizar_producto.php")
                     for(i in 0..categorias.size-1){
                         if(categoriasSeleccionadas[i] == true){
                             val nameCat = categorias[i]
@@ -350,8 +351,15 @@ class EditProduct : AppCompatActivity() {
             @Throws(AuthFailureError::class)
             override fun getParams(): Map<String, String?> {
                 val parametros = HashMap<String,String>()
-                parametros["idProd"] = ""
-                parametros["prodName"] = nombrProd.text.toString()
+                if(nombreProducto == nombrProd.text.toString()){ // este primer if es por si no se edita el nombre con respecto al que ya tenía ese producto
+                    parametros["idProd"] = ""
+                    parametros["prodName"] = ""
+                }
+                else{
+                    parametros["idProd"] = ""
+                    parametros["prodName"] = nombrProd.text.toString()
+                }
+
                 return parametros
             }
 
@@ -409,8 +417,7 @@ class EditProduct : AppCompatActivity() {
             @Throws(AuthFailureError::class)
             override fun getParams(): Map<String, String?> {
                 val parametros = HashMap<String,String>()
-                val pr = prod.text.toString()
-                parametros["idProd"] = pr // EL PROBLEMA ES QUE POR ALGUNA RAZÓN EL valor de pr lo agarra mal, por lo que
+                parametros["idProd"] = claveProducto
                 return parametros
             }
 
@@ -421,7 +428,6 @@ class EditProduct : AppCompatActivity() {
         }
         // Add the request to the RequestQueue.
         rq.add(stringRequest)
-        Toast.makeText(this, prod.text.toString(), Toast.LENGTH_LONG).show()
     }
 
 }
