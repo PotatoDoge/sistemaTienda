@@ -180,9 +180,9 @@
                 <ImageView
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginStart="20dp"
-                    android:src="@drawable/show_items" />
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/nueva_categoria" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -215,9 +215,9 @@
                 <ImageView
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginStart="20dp"
-                    android:src="@drawable/show_items" />
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/editar_categoria" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -249,9 +249,9 @@
                 <ImageView
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginStart="20dp"
-                    android:src="@drawable/show_items" />
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/basura" />
 
                 <TextView
                     android:layout_width="wrap_content"

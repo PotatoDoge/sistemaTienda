@@ -69,7 +69,6 @@ class AddProduct : AppCompatActivity() {
         catProd.setOnClickListener {
             selectCategories()
         }
-
     }
 
     /**
@@ -288,5 +287,7 @@ class AddProduct : AppCompatActivity() {
         // Add the request to the RequestQueue.
         rq.add(stringRequest)
     }
+
+
 
 }
