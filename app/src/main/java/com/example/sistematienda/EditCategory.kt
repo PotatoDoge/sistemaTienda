@@ -19,6 +19,7 @@ class EditCategory : AppCompatActivity() {
     private lateinit var descCat: EditText
     private lateinit var nombreCat: EditText
 
+    private var nameCat = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_category)
@@ -55,15 +56,13 @@ class EditCategory : AppCompatActivity() {
 
         updateCat.setOnClickListener {
             if(checkIfFieldsEmpty(cat,descCat,nombreCat)){
-                updateCategoryInDatabase(
-                    // TE QUEDASTE AQUÍ
-                    cat.text.toString(),nombreCat.text.toString(),descCat.text.toString(),"http://charlyffs.mywire.org:9000/actualizar_categoria.php"
-                )
-                Toast.makeText(this,"Categoria actualizada correctamente!", Toast.LENGTH_SHORT).show()
-                cat.text.clear()
-                descCat.text.clear()
-                nombreCat.text.clear()
-                cat.isEnabled = true
+                if(cat.text.toString().length < 20 && descCat.text.toString().length < 255 && nombreCat.text.toString().length < 20){
+                    descCat.text
+                    checkAvailability(cat.text.toString(),nombreCat.text.toString(),descCat.text.toString(), "http://charlyffs.mywire.org:9000/checar_disponibilidad_cat.php")
+                }
+                else{
+                    throwAlert("Valor incorrecto de caracteres","El valor máximo de caracteres es:\n-Clave: 20\n-Nombre: 20\n-Descripción: 255")
+                }
             }
         }
     }
@@ -152,6 +151,7 @@ class EditCategory : AppCompatActivity() {
                     cat.setText(jsonObject.getString("idCategoria"))
                     descCat.setText(jsonObject.getString("descripcion"))
                     nombreCat.setText(jsonObject.getString("nombre"))
+                    nameCat = jsonObject.getString("nombre")
                     cat.isEnabled = false
                 }
                 else{
@@ -168,6 +168,56 @@ class EditCategory : AppCompatActivity() {
             override fun getParams(): Map<String, String?> {
                 val parametros = HashMap<String,String>()
                 parametros["id"] = id
+                return parametros
+            }
+
+            @Throws(AuthFailureError::class)
+            override fun getHeaders(): Map<String, String> {
+                return HashMap()
+            }
+        }
+        // Add the request to the RequestQueue.
+        rq.add(stringRequest)
+    }
+
+    /**
+     * Method that checks if id exists in database. If it does not, it calls registerCategoryInDatabase method and handles products registration
+     */
+    private fun checkAvailability(id: String, name:String, dsc:String, URL: String){
+        val rq: RequestQueue = Volley.newRequestQueue(this)
+        val stringRequest = object : StringRequest(
+            Method.POST, URL, com.android.volley.Response.Listener { response ->
+                // lo que responde
+                if(response.isNotEmpty()){
+                    // encontró articulo con el mismo nombre
+                    throwAlert("Ya existe","Ya existe una categoría registrada con esa clave o nombre. Intente con otra de favor.")
+                }
+                else{
+                    updateCategoryInDatabase(cat.text.toString(),nombreCat.text.toString(),descCat.text.toString(),"http://charlyffs.mywire.org:9000/actualizar_categoria.php")
+                    Toast.makeText(this,"Categoria actualizada correctamente!", Toast.LENGTH_SHORT).show()
+                    cat.text.clear()
+                    descCat.text.clear()
+                    nombreCat.text.clear()
+                    cat.isEnabled = true
+                }
+            },
+            {
+                // lo que pasa si hay error
+                Toast.makeText(this, it.toString(), Toast.LENGTH_LONG).show()
+            })
+        {
+            @Throws(AuthFailureError::class)
+            override fun getParams(): Map<String, String?> {
+                val parametros = HashMap<String,String>()
+                if(nameCat == nombreCat.text.toString()){
+                    parametros["idCat"] = ""
+                    parametros["catName"] = ""
+                }
+                else{
+                    parametros["idCat"] = ""
+                    parametros["catName"] = nombreCat.text.toString()
+                }
+
                 return parametros
             }
 

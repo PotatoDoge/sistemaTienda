@@ -24,7 +24,6 @@ class EditProduct : AppCompatActivity() {
     private var nombreProducto: String = ""
 
     private var categorias = arrayOf<String>()
-    private var categoriasRegistradasEnProducto = arrayOf<String>()
     private var categoriasSeleccionadas = booleanArrayOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,7 +65,12 @@ class EditProduct : AppCompatActivity() {
 
         updateProd.setOnClickListener {
             if(checkIfFieldsEmpty(prod,descProd,nombrProd) && checkIfCategorySelected()){
-                checkAvailability("http://charlyffs.mywire.org:9000/checar_disponibilidad_prod.php")
+                if(prod.text.toString().length < 20 && descProd.text.toString().length < 255 && nombrProd.text.toString().length < 20){
+                    checkAvailability("http://charlyffs.mywire.org:9000/checar_disponibilidad_prod.php")
+                }
+                else{
+                    throwAlert("Valor incorrecto de caracteres","El valor máximo de caracteres es:\n-Clave: 20\n-Nombre: 20\n-Descripción: 255")
+                }
             }
         }
 

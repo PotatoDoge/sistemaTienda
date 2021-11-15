@@ -56,10 +56,16 @@ class AddProduct : AppCompatActivity() {
 
         agregarProd.setOnClickListener {
             if(checkIfFieldsEmpty(nuevoProd,nuevaDescProd,nuevoNombrProd) && checkIfCategorySelected()){
-                val id = nuevoProd.text.toString()
-                val name = nuevoNombrProd.text.toString()
-                val desc = nuevaDescProd.text.toString()
-                checkAvailability(id, name,desc,"http://charlyffs.mywire.org:9000/checar_disponibilidad_prod.php")
+                if(nuevoProd.text.toString().length < 20 && nuevaDescProd.text.toString().length < 255 && nuevoNombrProd.text.toString().length < 20){
+                    val id = nuevoProd.text.toString()
+                    val name = nuevoNombrProd.text.toString()
+                    val desc = nuevaDescProd.text.toString()
+                    checkAvailability(id, name,desc,"http://charlyffs.mywire.org:9000/checar_disponibilidad_prod.php")
+                }
+                else{
+                    throwAlert("Valor incorrecto de caracteres","El valor máximo de caracteres es:\n-Clave: 20\n-Nombre: 20\n-Descripción: 255")
+                }
+
             }
             else{
                 throwAlert("Llenar campos", "Todos los campos tienen que estar llenos para seguir con el registro, y mínimo una categoría seleccionada")

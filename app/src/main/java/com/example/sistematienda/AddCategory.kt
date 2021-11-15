@@ -50,7 +50,13 @@ class AddCategory : AppCompatActivity() {
 
         agregarCat.setOnClickListener{
             if(checkIfFieldsEmpty(nuevaCat, nuevaDescCat, nuevoNombrCat)){
-                checkAvailability(nuevaCat.text.toString(),nuevoNombrCat.text.toString(), nuevaDescCat.text.toString(), "http://charlyffs.mywire.org:9000/checar_disponibilidad_cat.php")
+                if(nuevaCat.text.toString().length < 20 && nuevaDescCat.text.toString().length < 255 && nuevoNombrCat.text.toString().length < 20){
+                    checkAvailability(nuevaCat.text.toString(),nuevoNombrCat.text.toString(), nuevaDescCat.text.toString(), "http://charlyffs.mywire.org:9000/checar_disponibilidad_cat.php")
+                }
+                else{
+                    throwAlert("Valor incorrecto de caracteres","El valor máximo de caracteres es:\n-Clave: 20\n-Nombre: 20\n-Descripción: 255")
+
+                }
             }
         }
     }
