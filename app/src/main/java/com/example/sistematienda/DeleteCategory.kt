@@ -72,12 +72,7 @@ class DeleteCategory : AppCompatActivity() {
      * Method that handles everything related to deleting a product
      */
     private fun borrarCategoria(){
-        deleteProductInDatabase(cat.text.toString(), "http://charlyffs.mywire.org:9000/borrar_categoria.php")
-        Toast.makeText(this,"Categroria borrada correctamente!", Toast.LENGTH_SHORT).show()
-        cat.text.clear()
-        descCat.text.clear()
-        nombreCat.text.clear()
-        cat.isEnabled = true
+        checkIfCatIsAssigned(cat.text.toString(),"http://charlyffs.mywire.org:9000/checar_si_categoria_esta_asignada.php")
     }
 
     /**
@@ -129,13 +124,9 @@ class DeleteCategory : AppCompatActivity() {
     }
 
     /**
-     * Method that checks if id exists in database. If it does not, it calls registerProductInDatabase method and handles products registration
-     */
-
-    /**
      * Method that registers products in the database
      */
-    private fun deleteProductInDatabase(id: String,URL: String){
+    private fun deleteCatInDatabase(id: String,URL: String){
         val rq: RequestQueue = Volley.newRequestQueue(this)
         val stringRequest = object : StringRequest(
             Method.POST, URL, com.android.volley.Response.Listener { _ ->
@@ -162,7 +153,7 @@ class DeleteCategory : AppCompatActivity() {
     }
 
     /**
-     * Method that retrieves info from the product and fills in the blank fields
+     * Method that retrieves info from the category and fills in the blank fields
      */
     private fun lookUpFields(URL: String, id: String){
         val rq: RequestQueue = Volley.newRequestQueue(this)
@@ -180,6 +171,47 @@ class DeleteCategory : AppCompatActivity() {
                 else{
                     // no encontró
                     throwAlert("No existe","No existe una categoria registrada con esa clave. Intente con otra de favor.")
+                }
+            },
+            {
+                // lo que pasa si hay error
+                Toast.makeText(this, it.toString(), Toast.LENGTH_LONG).show()
+            })
+        {
+            @Throws(AuthFailureError::class)
+            override fun getParams(): Map<String, String?> {
+                val parametros = HashMap<String,String>()
+                parametros["id"] = id
+                return parametros
+            }
+
+            @Throws(AuthFailureError::class)
+            override fun getHeaders(): Map<String, String> {
+                return HashMap()
+            }
+        }
+        // Add the request to the RequestQueue.
+        rq.add(stringRequest)
+    }
+
+    /**
+     * Method that checks if the category to be deleted is assigned to a product
+     */
+    private fun checkIfCatIsAssigned(id:String,URL: String){
+        val rq: RequestQueue = Volley.newRequestQueue(this)
+        val stringRequest = object : StringRequest(
+            Method.POST, URL, com.android.volley.Response.Listener { response ->
+                // lo que responde
+                if(response.isNotEmpty()){
+                    throwAlert("Categoría asignada","Hay productos los cuales tiene esta categoria asignada. De favor quitarla de éstos para poder borrarla correctamente.")
+                }
+                else{
+                    deleteCatInDatabase(cat.text.toString(), "http://charlyffs.mywire.org:9000/borrar_categoria.php")
+                    Toast.makeText(this,"Categroria borrada correctamente!", Toast.LENGTH_SHORT).show()
+                    cat.text.clear()
+                    descCat.text.clear()
+                    nombreCat.text.clear()
+                    cat.isEnabled = true
                 }
             },
             {
