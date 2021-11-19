@@ -129,8 +129,7 @@
 
 
         <androidx.cardview.widget.CardView
-            android:visibility="invisible"
-            android:id="@+id/mostrarProducto"
+            android:id="@+id/mostrarUsuarios"
             app:cardCornerRadius="15dp"
 
             android:layout_width="0dp"
@@ -158,7 +157,7 @@
                     android:layout_marginStart="10dp"
                     android:textSize="18sp"
                     android:textAlignment="center"
-                    android:text="@string/mostrar_productos">
+                    android:text="@string/mostrar_usuarios">
 
                 </TextView>
             </RelativeLayout>

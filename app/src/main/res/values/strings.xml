@@ -52,4 +52,6 @@
     <string name="descripcion_de_la_categoria">Descripcion de la Categoría</string>
     <string name="categoria">Categoría</string>
     <string name="filtrar_por">Filtrar por</string>
+    <string name="mostrar_usuarios">Mostrar Usuarios</string>
+    <string name="tipo">Tipo</string>
 </resources>
