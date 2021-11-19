@@ -24,9 +24,12 @@ class ShowUsers : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show_users)
+
         val returnButton = findViewById<ImageButton>(R.id.returnShowUser)
         val filtrar = findViewById<Button>(R.id.filtrarTablaUsuario)
         table = findViewById(R.id.usersTable)
+        categorias = arrayOf("Todo","NORMAL","ADMIN")
+
         mostrarUsuarios("http://charlyffs.mywire.org:9000/llenar_tabla_usuario.php","Todo")
 
         returnButton.setOnClickListener{
@@ -36,7 +39,8 @@ class ShowUsers : AppCompatActivity() {
             this.overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right)
         }
 
-        filtrar.setOnClickListener { // FILTRAR POR TIPOS DE USUARIO
+        filtrar.setOnClickListener {
+            selectCategories()
         }
 
     }
@@ -115,5 +119,25 @@ class ShowUsers : AppCompatActivity() {
      */
     override fun onBackPressed() {
         moveTaskToBack(false)
+    }
+
+    /**
+     * Method that displays the alert with the available catgeories
+     */
+    private fun selectCategories(){
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Categorías")
+        builder.setSingleChoiceItems(categorias, catSeleccionada) { _, which ->
+            catSeleccionada = which
+            catSelectedValue = categorias[which]
+        }
+
+        builder.setPositiveButton("Ok", DialogInterface.OnClickListener {
+                dialog,id ->
+            mostrarUsuarios("http://charlyffs.mywire.org:9000/llenar_tabla_usuario.php", catSelectedValue)
+        }).setCancelable(false)
+
+        val alert = builder.create()
+        alert.show()
     }
 }
