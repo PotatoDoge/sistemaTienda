@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/layout/activity_add_category.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_add_product.xml" value="0.2296195652173913" />
+        <entry key="app/src/main/res/layout/activity_add_user.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_delete_category.xml" value="0.27447916666666666" />
         <entry key="app/src/main/res/layout/activity_delete_product.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_edit_category.xml" value="0.35572916666666665" />

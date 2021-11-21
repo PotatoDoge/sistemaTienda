@@ -54,4 +54,10 @@
     <string name="filtrar_por">Filtrar por</string>
     <string name="mostrar_usuarios">Mostrar Usuarios</string>
     <string name="tipo">Tipo</string>
+    <string name="clave_de_usuario">Clave de Usuario</string>
+    <string name="nombre_del_usuario">Nombre del usuario</string>
+    <string name="apellido_del_usuario">Apellido del usuario</string>
+    <string name="telefono">Teléfono</string>
+    <string name="correo">Correo</string>
+    <string name="tipo_de_usuario">Tipo de Usuario</string>
 </resources>

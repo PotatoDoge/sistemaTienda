@@ -19,11 +19,16 @@ class SettingsActivity : AppCompatActivity() {
         val deleteUser = findViewById<CardView>(R.id.borrarUsuario)
         val returnButton = findViewById<ImageButton>(R.id.regresarAjustes)
 
+        addUser.setOnClickListener{
+            val intent = Intent(this, AddUser::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         showUsers.setOnClickListener{
             val intent = Intent(this, ShowUsers::class.java)
             startActivity(intent)
             finish()
-            // mostrar idEmpleado, tipoEmpleado, concat(nombre/apellido)
         }
 
         returnButton.setOnClickListener{

@@ -16,9 +16,6 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
         <activity
-            android:name=".ShowUsers"
-            android:exported="true" />
-        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="fullSensor">
@@ -83,6 +80,14 @@
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".AddCategory"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".AddUser"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".ShowUsers"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
     </application>
