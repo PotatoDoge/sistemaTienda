@@ -16,6 +16,9 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
         <activity
+            android:name=".EditUser"
+            android:exported="true" />
+        <activity
             android:name=".DeleteUser"
             android:exported="true" />
         <activity

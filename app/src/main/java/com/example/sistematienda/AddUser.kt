@@ -32,6 +32,7 @@ class AddUser : AppCompatActivity() {
         val returnButton = findViewById<ImageButton>(R.id.returnAddUser)
         val addUser = findViewById<Button>(R.id.addUsuario)
         val userTye = findViewById<Button>(R.id.addTipoUsuario)
+        val eraseFields = findViewById<ImageButton>(R.id.eraseFields)
         idUser = findViewById(R.id.addClaveUsuario)
         nombreUser = findViewById(R.id.addNombreUsuario)
         apellidoUser = findViewById(R.id.addApellidoUsuario)
@@ -63,6 +64,17 @@ class AddUser : AppCompatActivity() {
 
         userTye.setOnClickListener {
             selectType()
+        }
+
+        eraseFields.setOnClickListener{
+            nombreUser.text.clear()
+            apellidoUser.text.clear()
+            telefonoUser.text.clear()
+            correoUser.text.clear()
+            tipoUsuarioSeleccionado = -1
+            tipoUsuarioValor = ""
+            passwordUser.text.clear()
+            idUser.text.clear()
         }
 
     }
