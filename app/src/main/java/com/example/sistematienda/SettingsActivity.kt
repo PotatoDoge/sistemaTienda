@@ -25,6 +25,12 @@ class SettingsActivity : AppCompatActivity() {
             finish()
         }
 
+        deleteUser.setOnClickListener{
+            val intent = Intent(this, DeleteUser::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         showUsers.setOnClickListener{
             val intent = Intent(this, ShowUsers::class.java)
             startActivity(intent)

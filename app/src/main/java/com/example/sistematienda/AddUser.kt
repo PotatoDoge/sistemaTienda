@@ -3,7 +3,6 @@ import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.inputmethod.EditorInfo
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
@@ -23,7 +22,7 @@ class AddUser : AppCompatActivity() {
     private lateinit var correoUser: EditText
     private lateinit var passwordUser: EditText
 
-    private var tiposUsuario = arrayOf<String>("ADMIN","NORMAL")
+    private var tiposUsuario = arrayOf("ADMIN","NORMAL")
     private var tipoUsuarioSeleccionado: Int = -1
     private var tipoUsuarioValor:String = ""
 

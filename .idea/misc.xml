@@ -8,6 +8,7 @@
         <entry key="app/src/main/res/layout/activity_add_user.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_delete_category.xml" value="0.27447916666666666" />
         <entry key="app/src/main/res/layout/activity_delete_product.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/activity_delete_user.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_edit_category.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_edit_product.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_inventory.xml" value="0.125" />
