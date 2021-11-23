@@ -120,7 +120,30 @@ class PrincipalActivity : AppCompatActivity(),
 
     private fun showSettingsActions(){
         drawerLayout.closeDrawer(GravityCompat.START)
-        val intent = Intent(this, SettingsActivity::class.java)
-        startActivity(intent)
+        if(Usuario.tipoUsuario == "ADMIN"){
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+        }
+        else{
+            throwAlert("Acceso denegado","No tienes los permisos para acceder a esta funcionalidad")
+        }
+
+    }
+
+    /**
+     * Method that shows an alert with the required title and msg
+     */
+    private fun throwAlert(title:String, msg: String){
+        val dialogBuilder = AlertDialog.Builder(this)
+        dialogBuilder.setMessage(msg)
+            // if the dialog is cancelable
+            .setCancelable(false)
+            // positive button
+            .setPositiveButton("Ok", DialogInterface.OnClickListener {
+                    dialog, id -> dialog.dismiss()
+            })
+        val alert = dialogBuilder.create()
+        alert.setTitle(title)
+        alert.show()
     }
 }
