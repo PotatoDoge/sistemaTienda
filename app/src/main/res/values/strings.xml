@@ -61,5 +61,9 @@
     <string name="correo">Correo</string>
     <string name="tipo_de_usuario">Tipo de Usuario</string>
     <string name="buscar_usuario">Buscar Usuario</string>
+    <string name="existencia_inicial">Existencia inicial</string>
+    <string name="precio_unitario">Precio Unitario</string>
+    <string name="disponibilidad">Disponibilidad</string>
+    <string name="registrar">Registrar</string>
     nono
 </resources>
