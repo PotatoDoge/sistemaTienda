@@ -65,5 +65,7 @@
     <string name="precio_unitario">Precio Unitario</string>
     <string name="disponibilidad">Disponibilidad</string>
     <string name="registrar">Registrar</string>
+    <string name="cantidad">Cantidad</string>
+    <string name="existencia">Existencia</string>
     nono
 </resources>

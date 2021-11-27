@@ -12,6 +12,7 @@ class InventoryActivity : AppCompatActivity() {
         setContentView(R.layout.activity_inventory)
         val returnButton = findViewById<ImageButton>(R.id.regresarInventario)
         val registerProduct = findViewById<CardView>(R.id.registrarProducto)
+        val showProducts = findViewById<CardView>(R.id.mostrarProducto)
         returnButton.setOnClickListener{
             val intent = Intent(this, PrincipalActivity::class.java)
             startActivity(intent)
@@ -21,6 +22,12 @@ class InventoryActivity : AppCompatActivity() {
 
         registerProduct.setOnClickListener{
             val intent = Intent(this, RegisterProduct::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        showProducts.setOnClickListener{
+            val intent = Intent(this, ShowInventory::class.java)
             startActivity(intent)
             finish()
         }
