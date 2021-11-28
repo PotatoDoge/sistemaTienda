@@ -16,10 +16,10 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
         <activity
-            android:name=".StatusProduct"
+            android:name=".RemoveProduct"
             android:exported="true" />
         <activity
-            android:name=".DisableProduct"
+            android:name=".StatusProduct"
             android:exported="true" />
         <activity
             android:name=".ShowInventory"
