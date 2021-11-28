@@ -9,10 +9,11 @@
         <entry key="app/src/main/res/layout/activity_delete_category.xml" value="0.27447916666666666" />
         <entry key="app/src/main/res/layout/activity_delete_product.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_delete_user.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/activity_disable_product.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_edit_category.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_edit_product.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_edit_user.xml" value="0.35572916666666665" />
-        <entry key="app/src/main/res/layout/activity_inventory.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_inventory.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.29483695652173914" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_principal.xml" value="0.1" />
@@ -24,6 +25,7 @@
         <entry key="app/src/main/res/layout/activity_show_inventory.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_show_product.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_show_users.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/activity_status_product.xml" value="0.340625" />
         <entry key="app/src/main/res/layout/fragment_ajustes.xml" value="0.24003623188405798" />
         <entry key="app/src/main/res/layout/fragment_cerrar_sesion.xml" value="0.24003623188405798" />
         <entry key="app/src/main/res/layout/fragment_devolucion.xml" value="0.24003623188405798" />

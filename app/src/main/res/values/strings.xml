@@ -67,5 +67,7 @@
     <string name="registrar">Registrar</string>
     <string name="cantidad">Cantidad</string>
     <string name="existencia">Existencia</string>
-    nono
+    <string name="cambiar_status">Cambiar Status</string>
+    <string name="cambiar_producto">Cambiar producto</string>
+    <string name="status">Status</string>
 </resources>

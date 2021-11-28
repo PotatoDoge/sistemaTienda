@@ -16,6 +16,12 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
         <activity
+            android:name=".StatusProduct"
+            android:exported="true" />
+        <activity
+            android:name=".DisableProduct"
+            android:exported="true" />
+        <activity
             android:name=".ShowInventory"
             android:exported="true" />
         <activity
