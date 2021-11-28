@@ -15,6 +15,7 @@ class InventoryActivity : AppCompatActivity() {
         val showProducts = findViewById<CardView>(R.id.mostrarProducto)
         val disableProduct = findViewById<CardView>(R.id.statusProducto)
         val removeProduct = findViewById<CardView>(R.id.quitarProducto)
+        val modifyInventory = findViewById<CardView>(R.id.modificarInventario)
 
         returnButton.setOnClickListener{
             val intent = Intent(this, PrincipalActivity::class.java)
@@ -43,6 +44,12 @@ class InventoryActivity : AppCompatActivity() {
 
         removeProduct.setOnClickListener{
             val intent = Intent(this, RemoveProduct::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        modifyInventory.setOnClickListener{
+            val intent = Intent(this, ModifyInventoryStock::class.java)
             startActivity(intent)
             finish()
         }

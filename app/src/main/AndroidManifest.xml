@@ -16,6 +16,9 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
         <activity
+            android:name=".ModifyInventoryStock"
+            android:exported="true" />
+        <activity
             android:name=".RemoveProduct"
             android:exported="true" />
         <activity
