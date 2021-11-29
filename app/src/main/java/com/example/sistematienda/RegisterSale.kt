@@ -276,41 +276,6 @@ class RegisterSale : AppCompatActivity() {
         rq.add(stringRequest)
     }
 
-    /**
-     * Method that retrieves last idVenta from database
-     */
-    private fun getIdVenta(URL:String){
-        val rq: RequestQueue = Volley.newRequestQueue(this)
-        val stringRequest = object : StringRequest(
-            Method.POST, URL, com.android.volley.Response.Listener { response ->
-                if(response.isNotEmpty()){
-                    val jsonObject = JSONObject(response)
-                    idVenta = jsonObject.getString("idVenta").toString().toInt()
-                    for(v:Venta in finalProducts){
-                        SystemClock.sleep(100)
-                        registerDescripcionVenta("http://charlyffs.mywire.org:9000/agregar_descripcionVenta.php", idVenta,v.id,v.cantidad,v.precio)
-                    }
-                    Toast.makeText(this, idVenta.toString(), Toast.LENGTH_LONG).show()
-                }
-            },
-            {
-                // lo que pasa si hay error
-                Toast.makeText(this, it.toString(), Toast.LENGTH_LONG).show()
-            })
-        {
-            @Throws(AuthFailureError::class)
-            override fun getParams(): Map<String, String?> {
-                return HashMap<String, String>()
-            }
-
-            @Throws(AuthFailureError::class)
-            override fun getHeaders(): Map<String, String> {
-                return HashMap()
-            }
-        }
-        // Add the request to the RequestQueue.
-        rq.add(stringRequest)
-    }
 
     private fun registerDescripcionVenta(URL:String,idVen:Int,idProd:String,cant:Int,precio:Double){
         val rq: RequestQueue = Volley.newRequestQueue(this)
@@ -341,18 +306,6 @@ class RegisterSale : AppCompatActivity() {
         rq.add(stringRequest)
     }
 
-    /**
-     * Method that shows an alert with the required title and msg
-     */
-    private fun throwAlertSleep(title:String, msg: String, time: Long){
-        val dialogBuilder = AlertDialog.Builder(this)
-        dialogBuilder.setMessage(msg)
-        val alert = dialogBuilder.create()
-        alert.setTitle(title)
-        alert.show()
-        SystemClock.sleep(time)
-        alert.dismiss()
-    }
 
     /**
      * Method that handles the logic regarding registering a sale
@@ -362,7 +315,6 @@ class RegisterSale : AppCompatActivity() {
         joinProducts()
         insertIntoVenta("http://charlyffs.mywire.org:9000/registrar_venta.php")
         SystemClock.sleep(200)
-        //getIdVenta("http://charlyffs.mywire.org:9000/checar_ultima_venta.php")
         clave.text.clear()
         cantidad.text.clear()
         idVenta = 0
