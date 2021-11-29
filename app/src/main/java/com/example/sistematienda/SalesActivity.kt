@@ -12,6 +12,8 @@ class SalesActivity : AppCompatActivity() {
         setContentView(R.layout.activity_sales)
         val returnButton = findViewById<ImageButton>(R.id.regresarVentas)
         val newSale = findViewById<CardView>(R.id.registrarVenta)
+        val showSales = findViewById<CardView>(R.id.verVentas)
+
         returnButton.setOnClickListener{
             val intent = Intent(this, PrincipalActivity::class.java)
             startActivity(intent)
@@ -24,6 +26,13 @@ class SalesActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+        showSales.setOnClickListener{
+            val intent = Intent(this, ShowSales::class.java)
+            startActivity(intent)
+            finish()
+        }
+
     }
 
     override fun onBackPressed() {

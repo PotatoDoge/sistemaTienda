@@ -16,6 +16,9 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
         <activity
+            android:name=".ShowSales"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="fullSensor">
@@ -97,31 +100,31 @@
         <activity
             android:name=".ModifyInventoryStock"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"  />
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".RemoveProduct"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"  />
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".StatusProduct"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"  />
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".ShowInventory"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"  />
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".RegisterProduct"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"  />
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".EditUser"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"  />
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".DeleteUser"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"  />
+            tools:ignore="LockedOrientationActivity" />
     </application>
 
 </manifest>
