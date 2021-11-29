@@ -73,4 +73,6 @@
     <string name="cantidad">Cantidad</string>
     <string name="finalizar">Finalizar</string>
     <string name="id_prod">ID Prod</string>
+    <string name="clave_de_venta">Clave de venta</string>
+    <string name="completar">Completar</string>
 </resources>
