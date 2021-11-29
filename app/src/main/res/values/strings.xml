@@ -71,4 +71,5 @@
     <string name="status">Status</string>
     <string name="anadir">Añadir</string>
     <string name="cantidad">Cantidad</string>
+    <string name="finalizar">Finalizar</string>
 </resources>

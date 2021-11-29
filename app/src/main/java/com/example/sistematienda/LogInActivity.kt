@@ -27,10 +27,10 @@ class LogInActivity: AppCompatActivity() {
         val btnReg = findViewById<Button>(R.id.regresar_button)
 
         btnLogin.setOnClickListener{
-            //validarUsuario("http://charlyffs.mywire.org:9000/validar_usuario.php")
-            val intent = Intent(this,PrincipalActivity::class.java)
-            startActivity(intent)
-            finish()
+            validarUsuario("http://charlyffs.mywire.org:9000/validar_usuario.php")
+            //val intent = Intent(this,PrincipalActivity::class.java)
+            //startActivity(intent)
+            //finish()
         }
 
         btnReg.setOnClickListener{
@@ -53,6 +53,7 @@ class LogInActivity: AppCompatActivity() {
                     //Toast.makeText(this,response.toString(), Toast.LENGTH_LONG).show() descomentar para mostrar la respuesta del server
                     val jsonObject = JSONObject(response)
                     Usuario.tipoUsuario = jsonObject.getString("tipoEmpleado")
+                    Usuario.idUsuario = jsonObject.getString("idEmpleado")
                     val intent = Intent(this,PrincipalActivity::class.java)
                     startActivity(intent)
                     finish()

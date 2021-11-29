@@ -20,6 +20,7 @@
         <entry key="app/src/main/res/layout/activity_principal.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_products.xml" value="0.2296195652173913" />
         <entry key="app/src/main/res/layout/activity_register_product.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_register_sale.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_remove_product.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_returns.xml" value="0.26358695652173914" />
         <entry key="app/src/main/res/layout/activity_sales.xml" value="0.26358695652173914" />
@@ -38,6 +39,7 @@
         <entry key="app/src/main/res/layout/fragment_prueba.xml" value="0.2630208333333333" />
         <entry key="app/src/main/res/layout/fragment_venta.xml" value="0.24003623188405798" />
         <entry key="app/src/main/res/layout/layout_navigation_header.xml" value="0.29483695652173914" />
+        <entry key="app/src/main/res/layout/table_row_addSales.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/table_row_showproducts.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/menu/drawer_menu.xml" value="0.35572916666666665" />
       </map>

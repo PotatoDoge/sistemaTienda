@@ -16,27 +16,6 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
         <activity
-            android:name=".ModifyInventoryStock"
-            android:exported="true" />
-        <activity
-            android:name=".RemoveProduct"
-            android:exported="true" />
-        <activity
-            android:name=".StatusProduct"
-            android:exported="true" />
-        <activity
-            android:name=".ShowInventory"
-            android:exported="true" />
-        <activity
-            android:name=".RegisterProduct"
-            android:exported="true" />
-        <activity
-            android:name=".EditUser"
-            android:exported="true" />
-        <activity
-            android:name=".DeleteUser"
-            android:exported="true" />
-        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="fullSensor">
@@ -111,6 +90,38 @@
             android:name=".ShowUsers"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".RegisterSale"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".ModifyInventoryStock"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"  />
+        <activity
+            android:name=".RemoveProduct"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"  />
+        <activity
+            android:name=".StatusProduct"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"  />
+        <activity
+            android:name=".ShowInventory"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"  />
+        <activity
+            android:name=".RegisterProduct"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"  />
+        <activity
+            android:name=".EditUser"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"  />
+        <activity
+            android:name=".DeleteUser"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"  />
     </application>
 
 </manifest>
