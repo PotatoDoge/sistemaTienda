@@ -12,6 +12,8 @@ class ReturnsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_returns)
         val returnButton = findViewById<ImageButton>(R.id.regresarDevolucion)
         val newReturn = findViewById<CardView>(R.id.registrarDevolucion)
+        val showReturns = findViewById<CardView>(R.id.verDevolucion)
+
         returnButton.setOnClickListener{
             val intent = Intent(this, PrincipalActivity::class.java)
             startActivity(intent)
@@ -21,6 +23,12 @@ class ReturnsActivity : AppCompatActivity() {
 
         newReturn.setOnClickListener{
             val intent = Intent(this, RegisterReturn::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        showReturns.setOnClickListener{
+            val intent = Intent(this, ShowReturns::class.java)
             startActivity(intent)
             finish()
         }

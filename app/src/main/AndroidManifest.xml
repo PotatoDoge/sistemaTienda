@@ -16,6 +16,9 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
         <activity
+            android:name=".ShowReturns"
+            android:exported="true" />
+        <activity
             android:name=".RegisterReturn"
             android:exported="true" />
         <activity

@@ -168,7 +168,6 @@ class RegisterReturn : AppCompatActivity() {
                 if(response.isNotEmpty()){
                     val jsonObject = JSONObject(response)
                     idDev = jsonObject.getString("idDevolucion").toInt()
-                    Toast.makeText(this, idDev.toString(), Toast.LENGTH_LONG).show()
                     registrarVentaDevolucion("http://charlyffs.mywire.org:9000/registrar_venta_devolucion.php", claveProd.text.toString(),claveVenta.text.toString(),ctd.toString(), idDev.toString())
                     claveProd.text.clear()
                     claveVenta.text.clear()
