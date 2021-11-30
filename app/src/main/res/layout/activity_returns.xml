@@ -93,6 +93,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:visibility="invisible"
         android:id="@+id/devolver_inventario"
         app:cardCornerRadius="15dp"
 

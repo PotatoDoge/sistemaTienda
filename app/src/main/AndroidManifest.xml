@@ -16,15 +16,6 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
         <activity
-            android:name=".ShowReturns"
-            android:exported="true" />
-        <activity
-            android:name=".RegisterReturn"
-            android:exported="true" />
-        <activity
-            android:name=".ShowSales"
-            android:exported="true" />
-        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="fullSensor">
@@ -131,6 +122,18 @@
             android:name=".DeleteUser"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".ShowReturns"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"  />
+        <activity
+            android:name=".RegisterReturn"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"  />
+        <activity
+            android:name=".ShowSales"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"  />
     </application>
 
 </manifest>
